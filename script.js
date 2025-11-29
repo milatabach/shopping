@@ -17,7 +17,7 @@ function displayProducts(productsToDisplay) {
         const card = document.createElement('div');
         card.className = 'product-card';
         card.innerHTML = `
-            <div class="product-image">${product.image}</div>
+            <img src="${product.image}" alt="${product.name}" class="product-image">
             <div class="product-info">
                 <div class="product-category">${product.category.replace('mens', "Men's").replace('womens', "Women's").replace('accessories', 'Accessories')}</div>
                 <div class="product-name">${product.name}</div>
@@ -66,7 +66,7 @@ function updateCart() {
     } else {
         cartItems.innerHTML = cart.map(item => `
             <div class="cart-item">
-                <div class="cart-item-image">${item.image}</div>
+                <img src="${item.image}" alt="${item.name}" class="cart-item-image">
                 <div class="cart-item-details">
                     <div class="cart-item-name">${item.name}</div>
                     <div class="cart-item-price">$${item.price.toFixed(2)}</div>

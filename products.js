@@ -5,7 +5,7 @@ const products = [
         category: "mens",
         price: 24.99,
         description: "100% cotton crew neck t-shirt. Soft, breathable fabric perfect for everyday wear. Available in multiple colors.",
-        image: "👕"
+        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=600&fit=crop"
     },
     {
         id: 2,
@@ -13,7 +13,7 @@ const products = [
         category: "mens",
         price: 79.99,
         description: "Premium stretch denim with slim fit. Features five-pocket styling and durable construction for lasting comfort.",
-        image: "👖"
+        image: "https://images.unsplash.com/photo-1542272604-787c3835535d?w=500&h=600&fit=crop"
     },
     {
         id: 3,
@@ -21,7 +21,7 @@ const products = [
         category: "womens",
         price: 89.99,
         description: "Lightweight floral maxi dress with adjustable straps. Perfect for warm weather and special occasions.",
-        image: "👗"
+        image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&h=600&fit=crop"
     },
     {
         id: 4,
@@ -29,7 +29,7 @@ const products = [
         category: "accessories",
         price: 129.99,
         description: "Genuine leather crossbody bag with adjustable strap. Multiple compartments for organized storage.",
-        image: "👜"
+        image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&h=600&fit=crop"
     },
     {
         id: 5,
@@ -37,7 +37,7 @@ const products = [
         category: "mens",
         price: 94.99,
         description: "Lightweight athletic shoes with cushioned sole. Breathable mesh upper and responsive cushioning for all-day comfort.",
-        image: "👟"
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&h=600&fit=crop"
     },
     {
         id: 6,
@@ -45,7 +45,7 @@ const products = [
         category: "womens",
         price: 69.99,
         description: "Cozy wool blend cardigan with button closure. Classic fit perfect for layering in cooler weather.",
-        image: "🧥"
+        image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=500&h=600&fit=crop"
     },
     {
         id: 7,
@@ -53,7 +53,7 @@ const products = [
         category: "mens",
         price: 54.99,
         description: "Classic oxford shirt in wrinkle-resistant fabric. Perfect for business casual or smart casual occasions.",
-        image: "👔"
+        image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500&h=600&fit=crop"
     },
     {
         id: 8,
@@ -61,7 +61,7 @@ const products = [
         category: "womens",
         price: 49.99,
         description: "Moisture-wicking yoga pants with four-way stretch. High waistband for comfort and support during workouts.",
-        image: "👖"
+        image: "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=500&h=600&fit=crop"
     },
     {
         id: 9,
@@ -69,7 +69,7 @@ const products = [
         category: "accessories",
         price: 149.99,
         description: "Classic aviator style with polarized lenses. UV400 protection and durable metal frame construction.",
-        image: "🕶️"
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&h=600&fit=crop"
     },
     {
         id: 10,
@@ -77,7 +77,7 @@ const products = [
         category: "mens",
         price: 169.99,
         description: "Insulated puffer jacket with water-resistant outer shell. Features zip pockets and adjustable hood.",
-        image: "🧥"
+        image: "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=500&h=600&fit=crop"
     },
     {
         id: 11,
@@ -85,7 +85,7 @@ const products = [
         category: "womens",
         price: 189.99,
         description: "Luxurious 100% cashmere sweater with ribbed trim. Ultra-soft and warm for cold weather styling.",
-        image: "🧶"
+        image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500&h=600&fit=crop"
     },
     {
         id: 12,
@@ -93,7 +93,7 @@ const products = [
         category: "mens",
         price: 44.99,
         description: "Classic fit chino shorts in stretch cotton twill. Perfect for casual summer days with a 9-inch inseam.",
-        image: "🩳"
+        image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500&h=600&fit=crop"
     },
     {
         id: 13,
@@ -101,7 +101,7 @@ const products = [
         category: "womens",
         price: 119.99,
         description: "Elegant silk blouse with button front. Lightweight and breathable with a sophisticated drape.",
-        image: "👚"
+        image: "https://images.unsplash.com/photo-1564257577809-749e328484e4?w=500&h=600&fit=crop"
     },
     {
         id: 14,
@@ -109,7 +109,7 @@ const products = [
         category: "accessories",
         price: 64.99,
         description: "Durable canvas backpack with leather accents. Padded laptop compartment and multiple organizational pockets.",
-        image: "🎒"
+        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=600&fit=crop"
     },
     {
         id: 15,
@@ -117,7 +117,7 @@ const products = [
         category: "mens",
         price: 249.99,
         description: "Classic double-breasted peacoat in warm wool blend. Timeless style with anchor buttons and side pockets.",
-        image: "🧥"
+        image: "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=500&h=600&fit=crop"
     },
     {
         id: 16,
@@ -125,7 +125,7 @@ const products = [
         category: "womens",
         price: 29.99,
         description: "Moisture-wicking tank with built-in shelf bra. Ideal for gym workouts or casual athletic wear.",
-        image: "👚"
+        image: "https://images.unsplash.com/photo-1588117305388-c2631a279f82?w=500&h=600&fit=crop"
     },
     {
         id: 17,
@@ -133,7 +133,7 @@ const products = [
         category: "accessories",
         price: 39.99,
         description: "Full-grain leather belt with classic buckle. Versatile design suitable for both casual and formal wear.",
-        image: "🔗"
+        image: "https://images.unsplash.com/photo-1624222247344-550fb60583b8?w=500&h=600&fit=crop"
     },
     {
         id: 18,
@@ -141,7 +141,7 @@ const products = [
         category: "mens",
         price: 59.99,
         description: "Comfortable cotton-blend hoodie with kangaroo pocket. Soft fleece lining for extra warmth.",
-        image: "👘"
+        image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&h=600&fit=crop"
     },
     {
         id: 19,
@@ -149,7 +149,7 @@ const products = [
         category: "womens",
         price: 54.99,
         description: "Professional pencil skirt in stretch fabric. Sits at natural waist with back vent for easy movement.",
-        image: "👗"
+        image: "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=500&h=600&fit=crop"
     },
     {
         id: 20,
@@ -157,7 +157,7 @@ const products = [
         category: "accessories",
         price: 24.99,
         description: "Soft knit beanie with fold-up cuff. One size fits most, perfect for cold weather.",
-        image: "🧢"
+        image: "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=500&h=600&fit=crop"
     },
     {
         id: 21,
@@ -165,7 +165,7 @@ const products = [
         category: "mens",
         price: 49.99,
         description: "Soft cotton flannel in traditional plaid pattern. Button-down collar and chest pocket details.",
-        image: "👕"
+        image: "https://images.unsplash.com/photo-1598032895397-b9c0c921749e?w=500&h=600&fit=crop"
     },
     {
         id: 22,
@@ -173,7 +173,7 @@ const products = [
         category: "womens",
         price: 94.99,
         description: "Flattering wrap dress with tie waist. Versatile style perfect for office or evening events.",
-        image: "👗"
+        image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&h=600&fit=crop"
     },
     {
         id: 23,
@@ -181,7 +181,7 @@ const products = [
         category: "womens",
         price: 54.99,
         description: "Classic low-top canvas sneakers. Comfortable cushioned insole and durable rubber outsole.",
-        image: "👟"
+        image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&h=600&fit=crop"
     },
     {
         id: 24,
@@ -189,7 +189,7 @@ const products = [
         category: "mens",
         price: 139.99,
         description: "Nylon bomber jacket with ribbed cuffs and hem. Zip closure with side pockets and quilted lining.",
-        image: "🧥"
+        image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&h=600&fit=crop"
     },
     {
         id: 25,
@@ -197,7 +197,7 @@ const products = [
         category: "accessories",
         price: 34.99,
         description: "Lightweight scarf in soft fabric. Versatile accessory that adds style to any outfit.",
-        image: "🧣"
+        image: "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=500&h=600&fit=crop"
     },
     {
         id: 26,
@@ -205,7 +205,7 @@ const products = [
         category: "mens",
         price: 34.99,
         description: "Moisture-wicking athletic shorts with elastic waistband. Quick-dry fabric with mesh panels for ventilation.",
-        image: "🩳"
+        image: "https://images.unsplash.com/photo-1519235106638-30cc49b5dbc5?w=500&h=600&fit=crop"
     },
     {
         id: 27,
@@ -213,7 +213,7 @@ const products = [
         category: "womens",
         price: 84.99,
         description: "Classic denim jacket with button closure. Timeless style with chest pockets and adjustable waist tabs.",
-        image: "🧥"
+        image: "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500&h=600&fit=crop"
     },
     {
         id: 28,
@@ -221,7 +221,7 @@ const products = [
         category: "accessories",
         price: 44.99,
         description: "Bi-fold leather wallet with multiple card slots. Includes ID window and bill compartment.",
-        image: "💼"
+        image: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500&h=600&fit=crop"
     },
     {
         id: 29,
@@ -229,7 +229,7 @@ const products = [
         category: "mens",
         price: 39.99,
         description: "Classic pique polo with ribbed collar and cuffs. Comfortable cotton blend perfect for casual wear.",
-        image: "👕"
+        image: "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=500&h=600&fit=crop"
     },
     {
         id: 30,
@@ -237,6 +237,6 @@ const products = [
         category: "womens",
         price: 129.99,
         description: "Stylish ankle boots with side zip closure. Comfortable block heel and durable leather construction.",
-        image: "👢"
+        image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&h=600&fit=crop"
     }
 ];
