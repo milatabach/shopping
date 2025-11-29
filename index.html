@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleHub - Fashion Shopping</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>StyleHub</h1>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for clothing...">
+            </div>
+            <div class="cart-icon" onclick="toggleCart()">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M9 2L7 6H3L5 20H19L21 6H17L15 2H9Z" stroke-width="2"/>
+                </svg>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="filters">
+            <h3>Filters</h3>
+            <div class="filter-group">
+                <h4>Category</h4>
+                <label><input type="checkbox" value="mens" onchange="filterProducts()"> Men's</label>
+                <label><input type="checkbox" value="womens" onchange="filterProducts()"> Women's</label>
+                <label><input type="checkbox" value="accessories" onchange="filterProducts()"> Accessories</label>
+            </div>
+            <div class="filter-group">
+                <h4>Price Range</h4>
+                <label><input type="checkbox" value="0-50" onchange="filterProducts()"> Under $50</label>
+                <label><input type="checkbox" value="50-100" onchange="filterProducts()"> $50 - $100</label>
+                <label><input type="checkbox" value="100-200" onchange="filterProducts()"> $100 - $200</label>
+                <label><input type="checkbox" value="200+" onchange="filterProducts()"> $200+</label>
+            </div>
+        </aside>
+
+        <main>
+            <div class="products-header">
+                <h2>All Products</h2>
+                <select id="sortSelect" onchange="sortProducts()">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name">Name: A to Z</option>
+                </select>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </main>
+    </div>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="alert('Checkout functionality coming soon!')">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
