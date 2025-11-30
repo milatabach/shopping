@@ -238,5 +238,45 @@ const products = [
         price: 129.99,
         description: "Stylish ankle boots with side zip closure. Comfortable block heel and durable leather construction.",
         image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&h=600&fit=crop"
+    },
+    {
+        id: 31,
+        name: "Happiness",
+        category: "accessories",
+        price: 999.99,
+        description: "Pure, bottled happiness. A limited edition item that brings instant joy. One size fits all emotions. No refunds on used happiness.",
+        image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=500&h=600&fit=crop"
+    },
+    {
+        id: 32,
+        name: "Time",
+        category: "accessories",
+        price: 1299.99,
+        description: "Extra time in a convenient package. Add more hours to your day. Warning: May cause temporal paradoxes. Handle with care.",
+        image: "https://images.unsplash.com/photo-1501139083538-0139583c060f?w=500&h=600&fit=crop"
+    },
+    {
+        id: 33,
+        name: "Dreams",
+        category: "accessories",
+        price: 799.99,
+        description: "Premium quality dreams. Lucid and vivid. Choose your own adventure every night. Batteries not included.",
+        image: "https://images.unsplash.com/photo-1518176258769-f227c798150e?w=500&h=600&fit=crop"
+    },
+    {
+        id: 34,
+        name: "Confidence",
+        category: "accessories",
+        price: 549.99,
+        description: "Instant confidence boost. Wear it proudly. Guaranteed to make you feel unstoppable. Effects may vary.",
+        image: "https://images.unsplash.com/photo-1519834785169-98be25ec3f84?w=500&h=600&fit=crop"
+    },
+    {
+        id: 35,
+        name: "Peace of Mind",
+        category: "accessories",
+        price: 899.99,
+        description: "Tranquility in its purest form. Zen-certified and meditation-approved. Free from all worries and anxieties.",
+        image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&h=600&fit=crop"
     }
 ];
