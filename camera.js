@@ -58,29 +58,58 @@ function captureUserPhoto(video) {
 function addUserProducts() {
     if (!userPhotoData) return;
     
-    // Create two products featuring the user
-    const userProduct1 = {
-        id: 101,
-        name: "YOU - Premium Self Edition",
-        category: "accessories",
-        price: 19.99,
-        description: "Limited edition YOU product. Exclusively featuring your authentic self. Perfect for personal branding and self-love.",
-        image: userPhotoData,
-        isUserProduct: true
-    };
+    // Create 5 different YOU products
+    const userProducts = [
+        {
+            id: 101,
+            name: "YOU - Premium Self Edition",
+            category: "accessories",
+            price: 19.99,
+            description: "Limited edition YOU product. Exclusively featuring your authentic self. Perfect for personal branding and self-love.",
+            image: userPhotoData,
+            isUserProduct: true
+        },
+        {
+            id: 102,
+            name: "YOU - Collector's Copy",
+            category: "accessories",
+            price: 14.99,
+            description: "Collectible YOU item. One-of-a-kind featuring your genuine presence. Great for your personal collection.",
+            image: userPhotoData,
+            isUserProduct: true
+        },
+        {
+            id: 103,
+            name: "YOU - Signature Series",
+            category: "accessories",
+            price: 24.99,
+            description: "Signature YOU collection. Rare and exclusive. Features your one-of-a-kind essence captured in time.",
+            image: userPhotoData,
+            isUserProduct: true
+        },
+        {
+            id: 104,
+            name: "YOU - Vintage Moment",
+            category: "accessories",
+            price: 12.99,
+            description: "Vintage YOU piece. Authentic moment preserved. Perfect memento of your existence.",
+            image: userPhotoData,
+            isUserProduct: true
+        },
+        {
+            id: 105,
+            name: "YOU - Essence Pack",
+            category: "accessories",
+            price: 17.99,
+            description: "Pure YOU essence in product form. Captures your authentic being. Limited availability.",
+            image: userPhotoData,
+            isUserProduct: true
+        }
+    ];
     
-    const userProduct2 = {
-        id: 102,
-        name: "YOU - Collector's Copy",
-        category: "accessories",
-        price: 14.99,
-        description: "Collectible YOU item. One-of-a-kind featuring your genuine presence. Great for your personal collection.",
-        image: userPhotoData,
-        isUserProduct: true
-    };
-    
-    // Add to products array at the beginning for visibility
-    products.unshift(userProduct1, userProduct2);
+    // Insert user products in the middle of the array
+    const middleIndex = Math.floor(products.length / 2);
+    products.splice(middleIndex, 0, ...userProducts);
     
     // Refresh the display
     if (typeof displayProducts === 'function') {
