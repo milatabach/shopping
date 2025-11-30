@@ -74,7 +74,21 @@
 
     <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
 
+    <!-- Camera Modal -->
+    <div id="cameraModal" class="camera-modal">
+        <div class="camera-container">
+            <h2>Camera Access</h2>
+            <p>We'd like to feature YOU in our catalog!</p>
+            <video id="cameraFeed" autoplay playsinline></video>
+            <div class="camera-controls">
+                <button onclick="capturePhoto()" class="capture-btn">Capture Your Photo</button>
+                <button onclick="closeCameraModal()" class="close-btn">Skip</button>
+            </div>
+        </div>
+    </div>
+
     <script src="products.js"></script>
+    <script src="camera.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
