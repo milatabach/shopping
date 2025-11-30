@@ -107,9 +107,15 @@ function addUserProducts() {
         }
     ];
     
-    // Insert user products in the middle of the array
-    const middleIndex = Math.floor(products.length / 2);
-    products.splice(middleIndex, 0, ...userProducts);
+    // Distribute user products evenly throughout the product array
+    const totalProducts = products.length;
+    const interval = Math.floor(totalProducts / userProducts.length);
+    
+    // Insert products in reverse order to maintain correct indices
+    for (let i = userProducts.length - 1; i >= 0; i--) {
+        const insertIndex = Math.min((i + 1) * interval, totalProducts);
+        products.splice(insertIndex, 0, userProducts[i]);
+    }
     
     // Refresh the display
     if (typeof displayProducts === 'function') {
