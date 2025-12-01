@@ -51,6 +51,36 @@ function addToCart(productId) {
     showCartNotification();
 }
 
+// Add a custom item that isn't in the product catalog
+function addCustomItem() {
+    const name = prompt('Enter the name of the item:');
+    if (!name || !name.trim()) {
+        return;
+    }
+
+    // Automatically generate a plausible price between $5 and $250
+    const min = 5;
+    const max = 250;
+    const price = parseFloat((Math.random() * (max - min) + min).toFixed(2));
+
+    const query = encodeURIComponent(name.trim());
+    const customItem = {
+        id: Date.now(), // simple unique id
+        name: name.trim(),
+        category: 'custom',
+        price,
+        description: 'Custom item added by you. Price and preview generated automatically by the marketplace.',
+        // Use a placeholder image that always loads, with the item name rendered as text
+        image: `https://dummyimage.com/600x600/f2f2f2/555&text=${query}`,
+        quantity: 1,
+        isCustom: true
+    };
+
+    cart.push(customItem);
+    updateCart();
+    showCartNotification();
+}
+
 // Update cart display
 function updateCart() {
     const cartItems = document.getElementById('cartItems');

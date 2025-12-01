@@ -112,14 +112,6 @@ const products = [
         image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500&h=600&fit=crop"
     },
     {
-        id: 13,
-        name: "Silk Blouse",
-        category: "womens",
-        price: 119.99,
-        description: "Elegant silk blouse with button front. Lightweight and breathable with a sophisticated drape.",
-        image: "https://images.unsplash.com/photo-1564257577809-749e328484e4?w=500&h=600&fit=crop"
-    },
-    {
         id: 33,
         name: "Dreams",
         category: "accessories",
@@ -152,14 +144,6 @@ const products = [
         image: "https://images.unsplash.com/photo-1588117305388-c2631a279f82?w=500&h=600&fit=crop"
     },
     {
-        id: 17,
-        name: "Leather Belt",
-        category: "accessories",
-        price: 39.99,
-        description: "Full-grain leather belt with classic buckle. Versatile design suitable for both casual and formal wear.",
-        image: "https://images.unsplash.com/photo-1624222247344-550fb60583b8?w=500&h=600&fit=crop"
-    },
-    {
         id: 34,
         name: "Confidence",
         category: "accessories",
@@ -190,14 +174,6 @@ const products = [
         price: 24.99,
         description: "Soft knit beanie with fold-up cuff. One size fits most, perfect for cold weather.",
         image: "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=500&h=600&fit=crop"
-    },
-    {
-        id: 21,
-        name: "Flannel Shirt",
-        category: "mens",
-        price: 49.99,
-        description: "Soft cotton flannel in traditional plaid pattern. Button-down collar and chest pocket details.",
-        image: "https://images.unsplash.com/photo-1598032895397-b9c0c921749e?w=500&h=600&fit=crop"
     },
     {
         id: 35,

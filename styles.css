@@ -615,6 +615,25 @@ h1 {
     box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
 }
 
+.custom-item-btn {
+    width: 100%;
+    margin-bottom: 0.75rem;
+    padding: 0.7rem 1rem;
+    background-color: #ffffff;
+    color: #111;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-item-btn:hover {
+    background-color: #f3f3f3;
+    box-shadow: 0 2px 4px rgba(15,17,17,0.15);
+}
+
 .checkout-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(39, 174, 96, 0.4);
