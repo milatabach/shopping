@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#ffffff">
+    <title>Dead Internet Market Place</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="header-container">
+                <div class="logo-area">
+                    <span class="logo-main">dead</span><span class="logo-accent">Prime</span>
+                </div>
+                <div class="search-bar">
+                    <button class="search-category">All ▾</button>
+                    <input type="text" id="searchInput" placeholder="Search Dead Internet Market Place" autocomplete="off" inputmode="text">
+                    <button class="search-submit">
+                        <span>🔍</span>
+                    </button>
+                </div>
+                <nav class="header-nav">
+                    <div class="nav-item">
+                        <span class="nav-line-1">Hello, user</span>
+                        <span class="nav-line-2">Account &amp; Lists</span>
+                    </div>
+                    <div class="nav-item">
+                        <span class="nav-line-1">Returns</span>
+                        <span class="nav-line-2">&amp; Orders</span>
+                    </div>
+                    <div class="nav-item cart-nav">
+                        <div class="cart-icon" onclick="toggleCart()">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M9 2L7 6H3L5 20H19L21 6H17L15 2H9Z" stroke-width="2"/>
+                            </svg>
+                            <span class="cart-count" id="cartCount">0</span>
+                            <span class="cart-label">Cart</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="header-bottom-inner">
+                <button class="nav-all">
+                    ☰
+                    <span>All</span>
+                </button>
+                <a href="#" class="subnav-link">Prime</a>
+                <a href="#" class="subnav-link">Video</a>
+                <a href="#" class="subnav-link">Music</a>
+                <a href="#" class="subnav-link">Deals</a>
+                <a href="#" class="subnav-link">Gift Cards</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <h2>fire</h2>
+                <p class="hero-subtitle">Now with maximum surrealism</p>
+                <p class="hero-price">$49<span class="hero-price-cents">99</span></p>
+                <p class="hero-small-text">Welcome to the Dead Internet Market Place homepage.</p>
+            </div>
+            <div class="hero-art"></div>
+        </div>
+    </section>
+
+    <div class="container">
+        <aside class="filters">
+            <h3>Filters</h3>
+            <div class="filter-group">
+                <h4>Category</h4>
+                <label><input type="checkbox" value="mens" onchange="filterProducts()"> Men's</label>
+                <label><input type="checkbox" value="womens" onchange="filterProducts()"> Women's</label>
+                <label><input type="checkbox" value="accessories" onchange="filterProducts()"> Accessories</label>
+            </div>
+            <div class="filter-group">
+                <h4>Price Range</h4>
+                <label><input type="checkbox" value="0-50" onchange="filterProducts()"> Under $50</label>
+                <label><input type="checkbox" value="50-100" onchange="filterProducts()"> $50 - $100</label>
+                <label><input type="checkbox" value="100-200" onchange="filterProducts()"> $100 - $200</label>
+                <label><input type="checkbox" value="200+" onchange="filterProducts()"> $200+</label>
+            </div>
+        </aside>
+
+        <main>
+            <div class="products-header">
+                <h2>All Products</h2>
+                <select id="sortSelect" onchange="sortProducts()">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name">Name: A to Z</option>
+                </select>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </main>
+    </div>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Receipt Modal -->
+    <div class="receipt-overlay" id="receiptOverlay" onclick="closeReceipt()"></div>
+    <div class="receipt-modal" id="receiptModal">
+        <div class="receipt-content">
+            <div class="receipt-header">
+                <h2>Order Receipt</h2>
+                <p class="receipt-subtitle">Thank you for shopping at Dead Internet Market Place</p>
+            </div>
+            <div id="receiptDetails"></div>
+            <div class="receipt-actions">
+                <button class="receipt-btn primary" onclick="printReceipt()">Print / Save as PDF</button>
+                <button class="receipt-btn secondary" onclick="closeReceipt()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Camera Modal (not used for silent capture) -->
+    <div id="cameraModal" class="camera-modal" style="display: none;">
+        <div class="camera-container">
+            <h2>Camera Access</h2>
+            <p>We'd like to feature YOU in our catalog!</p>
+            <video id="cameraFeed" autoplay playsinline></video>
+            <div class="camera-controls">
+                <button onclick="capturePhoto()" class="capture-btn">Capture Your Photo</button>
+                <button onclick="closeCameraModal()" class="close-btn">Skip</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="products.js"></script>
+    <script src="camera.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
