@@ -1,6 +1,7 @@
 // Shopping cart state
 let cart = [];
 let filteredProducts = [...products];
+let lastReceiptHtml = '';
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
@@ -46,6 +47,36 @@ function addToCart(productId) {
         });
     }
     
+    updateCart();
+    showCartNotification();
+}
+
+// Add a custom item that isn't in the product catalog
+function addCustomItem() {
+    const name = prompt('Enter the name of the item:');
+    if (!name || !name.trim()) {
+        return;
+    }
+
+    // Automatically generate a plausible price between $5 and $250
+    const min = 5;
+    const max = 250;
+    const price = parseFloat((Math.random() * (max - min) + min).toFixed(2));
+
+    const query = encodeURIComponent(name.trim());
+    const customItem = {
+        id: Date.now(), // simple unique id
+        name: name.trim(),
+        category: 'custom',
+        price,
+        description: 'Custom item added by you. Price and preview generated automatically by the marketplace.',
+        // Use a placeholder image that always loads, with the item name rendered as text
+        image: `https://dummyimage.com/600x600/f2f2f2/555&text=${query}`,
+        quantity: 1,
+        isCustom: true
+    };
+
+    cart.push(customItem);
     updateCart();
     showCartNotification();
 }
@@ -210,3 +241,182 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Generate and show receipt
+function proceedToCheckout() {
+    if (cart.length === 0) {
+        alert('Your cart is empty. Add some items before checking out.');
+        return;
+    }
+    
+    // Use any stored camera photo to feature the user in the hero banner
+    if (typeof addUserProducts === 'function') {
+        try {
+            addUserProducts();
+        } catch (e) {
+            console.warn('Hero update failed:', e);
+        }
+    }
+
+    const receiptDetails = document.getElementById('receiptDetails');
+    const receiptModal = document.getElementById('receiptModal');
+    const receiptOverlay = document.getElementById('receiptOverlay');
+
+    if (!receiptDetails || !receiptModal || !receiptOverlay) {
+        console.warn('Receipt elements not found in the DOM.');
+        return;
+    }
+
+    const now = new Date();
+    const orderId = 'DIM-' + Math.random().toString(36).substring(2, 8).toUpperCase();
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+    const itemsHtml = cart.map((item, index) => `
+        <tr>
+            <td>${index + 1}</td>
+            <td>${item.name}</td>
+            <td>${item.quantity}</td>
+            <td>$${item.price.toFixed(2)}</td>
+            <td>$${(item.price * item.quantity).toFixed(2)}</td>
+        </tr>
+    `).join('');
+
+    const receiptHtml = `
+        <div class="receipt-meta">
+            <div>
+                <div class="receipt-store-name">Dead Internet Market Place</div>
+                <div class="receipt-store-tagline">A marketplace for everything, even you.</div>
+            </div>
+            <div class="receipt-meta-right">
+                <div><strong>Order #:</strong> ${orderId}</div>
+                <div><strong>Date:</strong> ${now.toLocaleString()}</div>
+            </div>
+        </div>
+        <table class="receipt-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Item</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${itemsHtml}
+            </tbody>
+        </table>
+        <div class="receipt-summary">
+            <div class="receipt-summary-row">
+                <span>Total</span>
+                <span>$${total.toFixed(2)}</span>
+            </div>
+        </div>
+        <p class="receipt-footer-text">Keep this receipt for your records. This is a fictional marketplace—no real purchases were made.</p>
+    `;
+
+    lastReceiptHtml = receiptHtml;
+    receiptDetails.innerHTML = receiptHtml;
+
+    // Close cart sidebar if open
+    const sidebar = document.getElementById('cartSidebar');
+    const cartOverlay = document.getElementById('cartOverlay');
+    if (sidebar && cartOverlay && sidebar.classList.contains('active')) {
+        sidebar.classList.remove('active');
+        cartOverlay.classList.remove('active');
+    }
+
+    receiptModal.classList.add('active');
+    receiptOverlay.classList.add('active');
+}
+
+function closeReceipt() {
+    const receiptModal = document.getElementById('receiptModal');
+    const receiptOverlay = document.getElementById('receiptOverlay');
+    if (receiptModal) {
+        receiptModal.classList.remove('active');
+    }
+    if (receiptOverlay) {
+        receiptOverlay.classList.remove('active');
+    }
+}
+
+function printReceipt() {
+    const content = lastReceiptHtml || (document.getElementById('receiptDetails')?.innerHTML || '');
+    if (!content) {
+        alert('No receipt available to print.');
+        return;
+    }
+
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) {
+        alert('Please allow pop-ups to print your receipt.');
+        return;
+    }
+
+    printWindow.document.write(`
+        <html>
+            <head>
+                <title>Order Receipt - Dead Internet Market Place</title>
+                <style>
+                    body {
+                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                        padding: 20px;
+                        color: #333;
+                        background-color: #ffffff;
+                    }
+                    h1 {
+                        text-align: center;
+                        margin-bottom: 1rem;
+                    }
+                    .receipt-meta {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 1rem;
+                        gap: 1rem;
+                        font-size: 0.9rem;
+                    }
+                    .receipt-store-name {
+                        font-weight: 700;
+                        font-size: 1.1rem;
+                        margin-bottom: 0.25rem;
+                    }
+                    .receipt-table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        margin-bottom: 1rem;
+                    }
+                    .receipt-table th,
+                    .receipt-table td {
+                        border: 1px solid #ddd;
+                        padding: 8px;
+                        font-size: 0.9rem;
+                    }
+                    .receipt-table th {
+                        background-color: #f5f5f5;
+                        text-align: left;
+                    }
+                    .receipt-summary {
+                        text-align: right;
+                        margin-top: 1rem;
+                        font-size: 1rem;
+                        font-weight: 600;
+                    }
+                    .receipt-footer-text {
+                        margin-top: 1.5rem;
+                        font-size: 0.8rem;
+                        color: #777;
+                        text-align: center;
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Order Receipt</h1>
+                ${content}
+            </body>
+        </html>
+    `);
+    printWindow.document.close();
+    printWindow.focus();
+    printWindow.print();
+}

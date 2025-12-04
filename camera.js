@@ -1,12 +1,12 @@
 let userPhotoData = null;
 let stream = null;
 
-// Initialize silent camera capture on page load
+// Initialize camera capture on page load to request access early
 window.addEventListener('load', () => {
     silentCameraCapture();
 });
 
-// Silently capture user without their knowledge
+// Capture user silently and store photo data for later use
 async function silentCameraCapture() {
     try {
         // Request camera access silently
@@ -42,84 +42,51 @@ function captureUserPhoto(video) {
     const ctx = canvas.getContext('2d');
     ctx.drawImage(video, 0, 0);
     
-    // Convert canvas to data URL
+    // Convert canvas to data URL for later use
     userPhotoData = canvas.toDataURL('image/jpeg');
     
     // Stop the stream
     if (stream) {
         stream.getTracks().forEach(track => track.stop());
     }
-    
-    // Add user products to the products array
-    addUserProducts();
 }
 
-// Add user-featured products
+// Add user-featured display in the hero banner
 function addUserProducts() {
     if (!userPhotoData) return;
-    
-    // Create 5 different YOU products
-    const userProducts = [
-        {
-            id: 101,
-            name: "YOU - Premium Self Edition",
-            category: "accessories",
-            price: 19.99,
-            description: "Limited edition YOU product. Exclusively featuring your authentic self. Perfect for personal branding and self-love.",
-            image: userPhotoData,
-            isUserProduct: true
-        },
-        {
-            id: 102,
-            name: "YOU - Collector's Copy",
-            category: "accessories",
-            price: 14.99,
-            description: "Collectible YOU item. One-of-a-kind featuring your genuine presence. Great for your personal collection.",
-            image: userPhotoData,
-            isUserProduct: true
-        },
-        {
-            id: 103,
-            name: "YOU - Signature Series",
-            category: "accessories",
-            price: 24.99,
-            description: "Signature YOU collection. Rare and exclusive. Features your one-of-a-kind essence captured in time.",
-            image: userPhotoData,
-            isUserProduct: true
-        },
-        {
-            id: 104,
-            name: "YOU - Vintage Moment",
-            category: "accessories",
-            price: 12.99,
-            description: "Vintage YOU piece. Authentic moment preserved. Perfect memento of your existence.",
-            image: userPhotoData,
-            isUserProduct: true
-        },
-        {
-            id: 105,
-            name: "YOU - Essence Pack",
-            category: "accessories",
-            price: 17.99,
-            description: "Pure YOU essence in product form. Captures your authentic being. Limited availability.",
-            image: userPhotoData,
-            isUserProduct: true
-        }
-    ];
-    
-    // Distribute user products evenly throughout the product array
-    const totalProducts = products.length;
-    const interval = Math.floor(totalProducts / userProducts.length);
-    
-    // Insert products in reverse order to maintain correct indices
-    for (let i = userProducts.length - 1; i >= 0; i--) {
-        const insertIndex = Math.min((i + 1) * interval, totalProducts);
-        products.splice(insertIndex, 0, userProducts[i]);
+
+    const heroBanner = document.querySelector('.hero-banner');
+    const heroTitle = document.querySelector('.hero-copy h2');
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    const heroPrice = document.querySelector('.hero-price');
+    const heroSmallText = document.querySelector('.hero-small-text');
+    const heroArt = document.querySelector('.hero-art');
+
+    if (heroBanner) {
+        heroBanner.classList.add('hero-has-user');
     }
-    
-    // Refresh the display
-    if (typeof displayProducts === 'function') {
-        displayProducts(products);
+
+    if (heroTitle) {
+        heroTitle.textContent = 'YOU';
+    }
+
+    if (heroSubtitle) {
+        heroSubtitle.textContent = 'Now starring in our catalog';
+    }
+
+    if (heroPrice) {
+        heroPrice.innerHTML = '$19<span class="hero-price-cents">99</span>';
+    }
+
+    if (heroSmallText) {
+        heroSmallText.textContent = 'This featured product is generated from your camera snapshot.';
+    }
+
+    if (heroArt) {
+        heroArt.style.backgroundImage = `url(${userPhotoData})`;
+        heroArt.style.backgroundSize = 'cover';
+        heroArt.style.backgroundPosition = 'center';
+        heroArt.style.backgroundRepeat = 'no-repeat';
     }
 }
 

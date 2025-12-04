@@ -112,14 +112,6 @@ const products = [
         image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500&h=600&fit=crop"
     },
     {
-        id: 13,
-        name: "Silk Blouse",
-        category: "womens",
-        price: 119.99,
-        description: "Elegant silk blouse with button front. Lightweight and breathable with a sophisticated drape.",
-        image: "https://images.unsplash.com/photo-1564257577809-749e328484e4?w=500&h=600&fit=crop"
-    },
-    {
         id: 33,
         name: "Dreams",
         category: "accessories",
@@ -152,14 +144,6 @@ const products = [
         image: "https://images.unsplash.com/photo-1588117305388-c2631a279f82?w=500&h=600&fit=crop"
     },
     {
-        id: 17,
-        name: "Leather Belt",
-        category: "accessories",
-        price: 39.99,
-        description: "Full-grain leather belt with classic buckle. Versatile design suitable for both casual and formal wear.",
-        image: "https://images.unsplash.com/photo-1624222247344-550fb60583b8?w=500&h=600&fit=crop"
-    },
-    {
         id: 34,
         name: "Confidence",
         category: "accessories",
@@ -190,14 +174,6 @@ const products = [
         price: 24.99,
         description: "Soft knit beanie with fold-up cuff. One size fits most, perfect for cold weather.",
         image: "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=500&h=600&fit=crop"
-    },
-    {
-        id: 21,
-        name: "Flannel Shirt",
-        category: "mens",
-        price: 49.99,
-        description: "Soft cotton flannel in traditional plaid pattern. Button-down collar and chest pocket details.",
-        image: "https://images.unsplash.com/photo-1598032895397-b9c0c921749e?w=500&h=600&fit=crop"
     },
     {
         id: 35,
@@ -278,125 +254,5 @@ const products = [
         price: 129.99,
         description: "Stylish ankle boots with side zip closure. Comfortable block heel and durable leather construction.",
         image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&h=600&fit=crop"
-    },
-    {
-        id: 36,
-        name: "Henley T-Shirt",
-        category: "mens",
-        price: 34.99,
-        description: "Soft cotton henley with button placket. Classic casual style perfect for layering or wearing alone.",
-        image: "https://images.unsplash.com/photo-1618572454481-63b6263c0dab?w=500&h=600&fit=crop"
-    },
-    {
-        id: 37,
-        name: "V-Neck Sweater",
-        category: "womens",
-        price: 74.99,
-        description: "Elegant v-neck sweater in soft merino blend. Perfect for both casual and professional settings.",
-        image: "https://images.unsplash.com/photo-1596637065346-76bd1d541e2d?w=500&h=600&fit=crop"
-    },
-    {
-        id: 38,
-        name: "Cargo Pants",
-        category: "mens",
-        price: 69.99,
-        description: "Durable cargo pants with multiple pockets and drawstring waist. Perfect for outdoor adventures.",
-        image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500&h=600&fit=crop"
-    },
-    {
-        id: 39,
-        name: "Maxi Skirt",
-        category: "womens",
-        price: 79.99,
-        description: "Flowing maxi skirt with elastic waist. Comfortable and versatile for any occasion.",
-        image: "https://images.unsplash.com/photo-1612336307429-8a88e8d08dbb?w=500&h=600&fit=crop"
-    },
-    {
-        id: 40,
-        name: "Work Boots",
-        category: "mens",
-        price: 159.99,
-        description: "Tough leather work boots with steel toe protection. Oil-resistant sole and lace-up closure.",
-        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&h=600&fit=crop"
-    },
-    {
-        id: 41,
-        name: "Bandeau Top",
-        category: "womens",
-        price: 39.99,
-        description: "Strapless bandeau top in soft jersey fabric. Versatile piece perfect for layering or beach wear.",
-        image: "https://images.unsplash.com/photo-1506253550348-2168b5e5c519?w=500&h=600&fit=crop"
-    },
-    {
-        id: 42,
-        name: "Thermal Long Sleeve",
-        category: "mens",
-        price: 44.99,
-        description: "Warm thermal long sleeve with brushed lining. Ideal for layering in cold weather.",
-        image: "https://images.unsplash.com/photo-1599193591688-72c63dbdd77f?w=500&h=600&fit=crop"
-    },
-    {
-        id: 43,
-        name: "Wide-Brim Hat",
-        category: "accessories",
-        price: 49.99,
-        description: "Classic wide-brim hat in quality fabric. Perfect for sun protection and adding style to any outfit.",
-        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&h=600&fit=crop"
-    },
-    {
-        id: 44,
-        name: "Linen Pants",
-        category: "womens",
-        price: 89.99,
-        description: "Breathable linen pants with relaxed fit. Lightweight and comfortable for warm weather.",
-        image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500&h=600&fit=crop"
-    },
-    {
-        id: 45,
-        name: "Performance Gloves",
-        category: "accessories",
-        price: 29.99,
-        description: "Insulated gloves with touchscreen compatible fingertips. Waterproof and windproof design.",
-        image: "https://images.unsplash.com/photo-1523521213198-776d0908a54f?w=500&h=600&fit=crop"
-    },
-    {
-        id: 46,
-        name: "Crew Socks Pack",
-        category: "accessories",
-        price: 19.99,
-        description: "Pack of 3 comfortable crew socks in breathable cotton blend. Perfect for everyday wear.",
-        image: "https://images.unsplash.com/photo-1587563871541-e1dfc9f95a27?w=500&h=600&fit=crop"
-    },
-    {
-        id: 47,
-        name: "Denim Overalls",
-        category: "womens",
-        price: 99.99,
-        description: "Trendy denim overalls with adjustable straps. Durable construction with front pockets.",
-        image: "https://images.unsplash.com/photo-1570933382230-04f09b8bd2eb?w=500&h=600&fit=crop"
-    },
-    {
-        id: 48,
-        name: "Rain Jacket",
-        category: "mens",
-        price: 119.99,
-        description: "Waterproof rain jacket with sealed seams. Packable design perfect for travel.",
-        image: "https://images.unsplash.com/photo-1578257914639-c5c37eb67de6?w=500&h=600&fit=crop"
-    },
-    {
-        id: 49,
-        name: "Crossbody Purse",
-        category: "accessories",
-        price: 89.99,
-        description: "Compact crossbody purse with adjustable strap. Multiple compartments for organization.",
-        image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&h=600&fit=crop"
-    },
-    {
-        id: 50,
-        name: "Sports Bra",
-        category: "womens",
-        price: 59.99,
-        description: "High-impact sports bra with adjustable straps. Breathable mesh and excellent support.",
-        image: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=500&h=600&fit=crop"
     }
 ];
