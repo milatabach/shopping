@@ -254,5 +254,93 @@ const products = [
         price: 129.99,
         description: "Stylish ankle boots with side zip closure. Comfortable block heel and durable leather construction.",
         image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500&h=600&fit=crop"
+    },
+    {
+        id: 36,
+        name: "Grandchild, male",
+        category: "womens",
+        price: 450000,
+        description: "Grandchild, male",
+        image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=500&h=600&fit=crop"
+    },
+    {
+        id: 37,
+        name: "Grandchild, female",
+        category: "womens",
+        price: 450000,
+        description: "Grandchild, female",
+        image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&h=600&fit=crop"
+    },
+    {
+        id: 38,
+        name: "More frequent Calls from Children, twice a week for 1 year",
+        category: "womens",
+        price: 2999,
+        description: "More frequent Calls from Children, twice a week for 1 year",
+        image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=500&h=600&fit=crop"
+    },
+    {
+        id: 39,
+        name: "Career Success",
+        category: "mens",
+        price: 199000,
+        description: "Career Success",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=600&fit=crop"
+    },
+    {
+        id: 40,
+        name: "Respect, 6 months",
+        category: "mens",
+        price: 6090,
+        description: "Respect, 6 months",
+        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=600&fit=crop"
+    },
+    {
+        id: 41,
+        name: "Daily Appreciation, 3 months",
+        category: "mens",
+        price: 2800,
+        description: "Daily Appreciation, 3 months",
+        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&h=600&fit=crop"
+    },
+    {
+        id: 42,
+        name: "Forever Young",
+        category: "mens",
+        price: 15900,
+        description: "Forever Young package",
+        image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=600&fit=crop"
+    },
+    {
+        id: 43,
+        name: "Emotional Connection, 24 months",
+        category: "mens",
+        price: 28000,
+        description: "Emotional Connection, 24 months",
+        image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=500&h=600&fit=crop"
+    },
+    {
+        id: 44,
+        name: "Validation, Lifetime Supply",
+        category: "mens",
+        price: 45000,
+        description: "Unlimited validation and recognition. Never feel unappreciated again. Terms and conditions apply.",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop"
+    },
+    {
+        id: 45,
+        name: "Legacy, Guaranteed",
+        category: "mens",
+        price: 125000,
+        description: "Your name will be remembered. Guaranteed legacy preservation for future generations.",
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=600&fit=crop"
+    },
+    {
+        id: 46,
+        name: "Unconditional Love, 12 months",
+        category: "mens",
+        price: 18900,
+        description: "Unconditional Love, 12 months. No questions asked, no strings attached.",
+        image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=500&h=600&fit=crop"
     }
 ];
