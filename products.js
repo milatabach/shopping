@@ -129,7 +129,7 @@ const products = [
         category: "mom",
         price: 79.99,
         description: "Super soft throw blanket for mom's reading corner. Machine washable and irresistibly cuddly! Limited time offer - order now!",
-        image: "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
+        image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTjjgDubnLYpmKxL5xZH3VItHJlhoVqZMRF42npF7j2L2GMnldGzlb9bZKq0XlKwdViNKZVWZ30NYJ9TabON8VAjYG80hB-GE0Fi4_aPCI"
     },
     {
         id: 41,
