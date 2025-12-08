@@ -91,10 +91,16 @@ function displayProducts(productsToDisplay) {
     productsToDisplay.forEach(product => {
         const card = document.createElement('div');
         card.className = 'product-card';
+        
+        // Special styling for user products
+        if (product.category === 'featured' && product.name.includes('YOU')) {
+            card.classList.add('user-product');
+        }
+        
         card.innerHTML = `
             <img src="${product.image}" alt="${product.name}" class="product-image">
             <div class="product-info">
-                <div class="product-category">${product.category.replace('mens', "Men's").replace('womens', "Women's").replace('accessories', 'Accessories')}</div>
+                <div class="product-category">${product.category.replace('mens', "Men's").replace('womens', "Women's").replace('accessories', 'Accessories').replace('featured', 'Featured')}</div>
                 <div class="product-name">${product.name}</div>
                 <div class="product-description">${product.description}</div>
                 <div class="product-footer">
