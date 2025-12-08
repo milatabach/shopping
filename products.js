@@ -240,7 +240,7 @@ const products = [
         category: "mom",
         price: 450000,
         description: "Deluxe grandson subscription with weekly video calls. Includes adorable giggles, first steps updates, and unlimited bragging rights.",
-        image: "https://images.unsplash.com/photo-1521762163-ee00e0ddd4e4?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=500&h=600&fit=crop"
     },
     {
         id: 100,
@@ -248,7 +248,7 @@ const products = [
         category: "mom",
         price: 450000,
         description: "Exclusive granddaughter membership featuring tea party invitations, dress-up sessions, and heartwarming 'I love Grandma' moments.",
-        image: "https://images.unsplash.com/photo-1521752163-1dcabb73ffb9?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=500&h=600&fit=crop"
     },
     {
         id: 96,
