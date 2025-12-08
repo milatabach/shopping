@@ -81,6 +81,7 @@ const products = [
         description: "Tranquility in its purest form. Zen-certified and meditation-approved. Free from all worries and anxieties.",
         image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&h=600&fit=crop"
     },
+
     // Mom Category Products - Normal to Crazy
     {
         id: 36,
@@ -88,7 +89,7 @@ const products = [
         category: "mom",
         price: 189.99,
         description: "Sophisticated wool jacket perfect for mom. Classic tailoring with modern comfort. She deserves to look amazing.",
-        image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=500&h=600&fit=crop"
+        image: "https://m.media-amazon.com/images/I/71EhO0e2KOL._AC_SY879_.jpg"
     },
     {
         id: 97,
@@ -104,7 +105,7 @@ const products = [
         category: "mom",
         price: 124.99,
         description: "Supportive walking shoes designed for mom's busy lifestyle. Cushioned insole and arch support for all-day comfort.",
-        image: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500&h=600&fit=crop"
+        image: "https://m.media-amazon.com/images/I/61FABOBX8UL._AC_SY695_.jpg"
     },
     {
         id: 38,
@@ -112,7 +113,7 @@ const products = [
         category: "mom",
         price: 299.99,
         description: "Timeless pearl necklace that mom will treasure forever. Genuine freshwater pearls with sterling silver clasp.",
-        image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&h=600&fit=crop"
+        image: "https://m.media-amazon.com/images/I/61wr27PeWpL._AC_SY695_.jpg"
     },
     {
         id: 39,
@@ -128,7 +129,7 @@ const products = [
         category: "mom",
         price: 79.99,
         description: "Super soft throw blanket for mom's reading corner. Machine washable and irresistibly cuddly.",
-        image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&h=600&fit=crop"
+        image: "https://m.media-amazon.com/images/I/71BFcr3BA1L._AC_SY695_.jpg"
     },
     {
         id: 41,
