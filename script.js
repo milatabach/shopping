@@ -2,11 +2,85 @@
 let cart = [];
 let filteredProducts = [...products];
 let lastReceiptHtml = '';
+let cartSound = null;
+
+// Map each product to a specific "feeling" about consumerism
+const consumerismFeelingsById = {
+    1: 'Everyday comfort disguised as a tiny upgrade you didn\'t really need',
+    2: 'The hope that a better fit will finally mean a better self',
+    3: 'Buying the feeling of being seen, admired, and perfectly in season',
+    4: 'Carrying the weight of everything you own, and a little status too',
+    5: 'The fantasy that new gear will transform you into your best self',
+    6: 'Wrapping yourself in softness to quiet a harder world',
+    7: 'Ironed respectability you can put on like armor',
+    8: 'Discipline, flexibility, and self‑improvement sewn into stretchy fabric',
+    9: 'A glossy shield between your eyes and an overwhelming reality',
+    10: 'Insulation against both the cold and the uncertainty outside',
+    11: 'Luxury as proof that you are finally worth the softness',
+    12: 'Casual freedom trimmed to an acceptable length',
+    14: 'Preparedness for leaving, even when you rarely do',
+    15: 'Old‑world stability bought off a modern rack',
+    16: 'The belief that sweat can be aesthetic and productive',
+    18: 'Cozy retreat you can zip into when everything feels too loud',
+    19: 'Professional polish that asks your body to stay inside the lines',
+    20: 'A small circle of warmth in a cooling world',
+    22: 'A fabric illusion that life might wrap up neatly too',
+    23: 'Nostalgic simplicity that still comes with a price tag',
+    24: 'Borrowed toughness from a jacket that has never seen a war',
+    25: 'A soft accent to prove you thought about how you look',
+    26: 'Elastic permission to keep moving, never stopping',
+    27: 'Rebellious cool that now comes pre‑distressed and overproduced',
+    28: 'Organized identity: cards, cash, and carefully curated self',
+    29: 'Casual success stitched into a tiny embroidered logo',
+    30: 'The sound of your steps trying to keep up with expectations',
+    31: 'Happiness, bottled and barcoded, sold in limited editions',
+    32: 'Time, once priceless, now on sale while supplies last',
+    33: 'Dreams outsourced to a brand and delivered overnight',
+    34: 'Confidence in capsule form, activated at checkout',
+    35: 'Peace of mind offered as a premium subscription to yourself',
+    1000: 'You, briefly packaged and priced for someone else'
+};
+
+function getConsumerismFeelingForItem(item) {
+    if (item && Object.prototype.hasOwnProperty.call(consumerismFeelingsById, item.id)) {
+        return consumerismFeelingsById[item.id];
+    }
+
+    if (item && item.isCustom) {
+        return 'A personalized desire, instantly manufactured on demand';
+    }
+
+    // Generic fallback in case something slips through
+    return 'Another small purchase trying to fill a much larger gap';
+}
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
     displayProducts(products);
+    
+    // Prepare cash register sound effect
+    try {
+        cartSound = new Audio('Cash Register (Kaching) - Sound Effect (HD).mp3');
+        cartSound.volume = 0.6;
+    } catch (e) {
+        console.warn('Unable to initialize cart sound:', e);
+    }
 });
+
+function playCartSound() {
+    if (!cartSound) return;
+    try {
+        cartSound.currentTime = 0;
+        const playPromise = cartSound.play();
+        if (playPromise && typeof playPromise.then === 'function') {
+            playPromise.catch(() => {
+                /* ignore autoplay / user gesture errors */
+            });
+        }
+    } catch (e) {
+        console.warn('Cart sound failed to play:', e);
+    }
+}
 
 // Display products on the page
 function displayProducts(productsToDisplay) {
@@ -16,7 +90,6 @@ function displayProducts(productsToDisplay) {
     productsToDisplay.forEach(product => {
         const card = document.createElement('div');
         card.className = 'product-card';
-        
         
         card.innerHTML = `
             <img src="${product.image}" alt="${product.name}" class="product-image">
@@ -49,6 +122,7 @@ function addToCart(productId) {
     
     updateCart();
     showCartNotification();
+    playCartSound();
 }
 
 // Add a custom item that isn't in the product catalog
@@ -79,6 +153,7 @@ function addCustomItem() {
     cart.push(customItem);
     updateCart();
     showCartNotification();
+    playCartSound();
 }
 
 // Update cart display
@@ -126,6 +201,9 @@ function updateQuantity(productId, change) {
             removeFromCart(productId);
         } else {
             updateCart();
+            if (change > 0) {
+                playCartSound();
+            }
         }
     }
 }
@@ -214,7 +292,6 @@ function proceedToCheckout() {
         alert('Your cart is empty. Add some items before checking out.');
         return;
     }
-    
 
     const receiptDetails = document.getElementById('receiptDetails');
     const receiptModal = document.getElementById('receiptModal');
@@ -229,15 +306,18 @@ function proceedToCheckout() {
     const orderId = 'DIM-' + Math.random().toString(36).substring(2, 8).toUpperCase();
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
-    const itemsHtml = cart.map((item, index) => `
+    const itemsHtml = cart.map((item, index) => {
+        const feeling = getConsumerismFeelingForItem(item);
+        return `
         <tr>
             <td>${index + 1}</td>
-            <td>${item.name}</td>
+            <td>${feeling}</td>
             <td>${item.quantity}</td>
             <td>$${item.price.toFixed(2)}</td>
             <td>$${(item.price * item.quantity).toFixed(2)}</td>
         </tr>
-    `).join('');
+        `;
+    }).join('');
 
     const receiptHtml = `
         <div class="receipt-meta">
@@ -254,7 +334,7 @@ function proceedToCheckout() {
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Item</th>
+                    <th>Feeling</th>
                     <th>Qty</th>
                     <th>Price</th>
                     <th>Subtotal</th>

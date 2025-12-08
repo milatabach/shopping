@@ -135,59 +135,51 @@ function captureUserPhoto(video) {
 
 // Add user as actual products within the product grid
 function addUserProducts() {
-    console.log('addUserProducts called, userPhotoData exists:', !!userPhotoData);
-    if (!userPhotoData) {
-        console.log('No user photo data available');
-        return;
+    if (!userPhotoData) return;
+
+    // Create or update a special "YOU" product in the catalog
+    const userProductId = 1000;
+    const userProduct = {
+        id: userProductId,
+        name: 'YOU (Featured Product)',
+        category: 'accessories',
+        price: 19.99,
+        description: 'A limited-time listing of your captured image, featured as a product in the Dead Internet Market Place.',
+        image: userPhotoData,
+        isUserProduct: true
+    };
+
+    if (typeof products !== 'undefined' && Array.isArray(products)) {
+        const existingIndex = products.findIndex(p => p.id === userProductId);
+        if (existingIndex >= 0) {
+            products[existingIndex] = userProduct;
+        } else {
+            // Put the user product at the front so it's clearly visible
+            products.unshift(userProduct);
+        }
     }
 
-    // Create user products to add to the main products array
-    const userProducts = [
-        {
-            id: 9999,
-            name: 'YOU - Premium Edition',
-            category: 'featured',
-            price: 19.99,
-            description: 'Limited edition authentic you! Captured live from your camera. One-of-a-kind digital collectible featuring your unique presence.',
-            image: userPhotoData
-        },
-        {
-            id: 9998,
-            name: 'YOU - Vintage Style',
-            category: 'featured',
-            price: 24.99,
-            description: 'Classic you with a timeless appeal. This exclusive item showcases your distinctive style in our curated collection.',
-            image: userPhotoData
-        },
-        {
-            id: 9997,
-            name: 'YOU - Deluxe Model',
-            category: 'featured',
-            price: 29.99,
-            description: 'The ultimate you experience! Premium quality authentic self-portrait. Perfect for collectors of unique personalities.',
-            image: userPhotoData
+    // Keep filteredProducts in sync if it exists
+    if (typeof filteredProducts !== 'undefined' && Array.isArray(filteredProducts)) {
+        const existingFilteredIndex = filteredProducts.findIndex(p => p.id === userProductId);
+        if (existingFilteredIndex >= 0) {
+            filteredProducts[existingFilteredIndex] = userProduct;
+        } else {
+            filteredProducts.unshift(userProduct);
         }
-    ];
+    }
 
-    // Add user products to the global products array
-    if (typeof products !== 'undefined') {
-        // Insert user products at strategic positions (beginning and scattered throughout)
-        products.unshift(userProducts[0]); // Add first one at the beginning
-        
-        // Insert others at different positions
-        const midPoint = Math.floor(products.length / 2);
-        products.splice(midPoint, 0, userProducts[1]);
-        products.splice(products.length - 5, 0, userProducts[2]);
-
-        console.log('Added user products to catalog. Total products:', products.length);
-        
-        // Refresh the product display if the display function exists
-        if (typeof displayProducts === 'function') {
-            displayProducts(products);
-            console.log('Refreshed product display with user products');
+    // Re-render the products grid, respecting current search/sort if possible
+    if (typeof applySearchAndSort === 'function') {
+        try {
+            applySearchAndSort();
+        } catch (e) {
+            if (typeof displayProducts === 'function') {
+                displayProducts(products);
+            }
         }
-    } else {
-        console.log('Products array not found');
+    } else if (typeof displayProducts === 'function') {
+        displayProducts(products);
     }
 }
 
