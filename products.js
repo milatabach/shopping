@@ -63,7 +63,7 @@ const products = [
         category: "accessories",
         price: 799.99,
         description: "Premium quality dreams. Lucid and vivid. Choose your own adventure every night. Batteries not included.",
-        image: "https://images.unsplash.com/photo-1518176258769-f227c798150e?w=500&h=600&fit=crop"
+        image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
         id: 34,
@@ -97,7 +97,7 @@ const products = [
         category: "mom",
         price: 189.99,
         description: "Luxurious 100% cashmere sweater with ribbed trim. Ultra-soft and warm for cold weather styling.",
-        image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500&h=600&fit=crop"
+        image: "https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
         id: 37,
@@ -354,7 +354,7 @@ const products = [
         category: "dad",
         price: 4999.99,
         description: "Genuine acknowledgment that dad might actually know what he's talking about. Extremely rare.",
-        image: "https://images.unsplash.com/photo-1521612163-0a1dd7228f2d?w=500&h=600&fit=crop"
+        image: "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
         id: 67,
@@ -362,7 +362,7 @@ const products = [
         category: "dad",
         price: 9999.99,
         description: "Complete elimination of that mysterious back pain that started in his thirties for no apparent reason.",
-        image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=600&fit=crop"
+        image: "https://images.pexels.com/photos/159711/pexels-photo-159711.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
         id: 68,
