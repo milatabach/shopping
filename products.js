@@ -580,7 +580,7 @@ const products = [
         category: "friends",
         price: 9999.99,
         description: "Friends who stick by you through thick and thin, bad haircuts, and questionable dating choices! Exclusive offer - limited stock!",
-        image: "https://images.unsplash.com/photo-1521632163-ae6968895b74?w=500&h=600&fit=crop"
+        image: "https://geediting.com/wp-content/uploads/2024/02/ways-to-recognize-a-truly-loyal-friend-according-to-psychology.png"
     },
     {
         id: 93,
