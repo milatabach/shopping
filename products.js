@@ -314,7 +314,7 @@ const products = [
         category: "dad",
         price: 399.99,
         description: "Three uninterrupted hours in the garage where nobody asks him to fix anything or explain where he put something! Transform your life today!",
-        image: "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=500&h=600&fit=crop"
+        image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
         id: 62,
