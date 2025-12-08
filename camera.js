@@ -52,27 +52,32 @@ async function silentCameraCapture() {
 
 // Show a user-friendly camera permission request
 function showCameraPermissionRequest() {
-    // Create a small notification
+    // Create a large, prominent notification
     const notification = document.createElement('div');
     notification.style.cssText = `
         position: fixed;
-        top: 100px;
-        right: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         background: #3498db;
         color: white;
-        padding: 1rem;
-        border-radius: 8px;
+        padding: 3rem;
+        border-radius: 16px;
         z-index: 10000;
-        max-width: 300px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        max-width: 700px;
+        width: 90%;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.4);
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        font-size: 0.9rem;
+        font-size: 1.4rem;
+        text-align: center;
     `;
     notification.innerHTML = `
-        <div style="margin-bottom: 0.5rem;"><strong>📸 Feature YOU in our catalog!</strong></div>
-        <div style="margin-bottom: 1rem;">Allow camera access to see yourself as a featured product.</div>
-        <button onclick="requestCameraAccess()" style="background: #2980b9; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">Allow Camera</button>
-        <button onclick="this.parentElement.remove()" style="background: transparent; color: white; border: 1px solid white; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; margin-left: 0.5rem;">Skip</button>
+        <div style="margin-bottom: 1rem; font-size: 1.6rem;"><strong>📸 Feature YOU in our catalog!</strong></div>
+        <div style="margin-bottom: 2rem; font-size: 1.2rem;">Allow camera access to see yourself as a featured product.</div>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <button onclick="requestCameraAccess()" style="background: #2980b9; color: white; border: none; padding: 1rem 2rem; border-radius: 8px; cursor: pointer; font-size: 1.1rem; font-weight: 600; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Allow Camera</button>
+            <button onclick="this.parentElement.parentElement.remove()" style="background: transparent; color: white; border: 2px solid white; padding: 1rem 2rem; border-radius: 8px; cursor: pointer; font-size: 1.1rem; font-weight: 600; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Skip</button>
+        </div>
     `;
     document.body.appendChild(notification);
     
