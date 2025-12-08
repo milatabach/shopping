@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
@@ -9,6 +10,7 @@
     <title>Dead Internet Market Place</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <div class="header-top">
@@ -18,9 +20,13 @@
                 </div>
                 <div class="search-bar">
                     <button class="search-category">All ▾</button>
-                    <input type="text" id="searchInput" placeholder="Search Dead Internet Market Place" autocomplete="off" inputmode="text">
+                    <input type="text" id="searchInput" placeholder="Search Dead Internet Market Place"
+                        autocomplete="off" inputmode="text">
                     <button class="search-submit">
-                        <span>🔍</span>
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2.5" />
+                            <path d="M15 15L22 22" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" />
+                        </svg>
                     </button>
                 </div>
                 <nav class="header-nav">
@@ -35,7 +41,7 @@
                     <div class="nav-item cart-nav">
                         <div class="cart-icon" onclick="toggleCart()">
                             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path d="M9 2L7 6H3L5 20H19L21 6H17L15 2H9Z" stroke-width="2"/>
+                                <path d="M9 2L7 6H3L5 20H19L21 6H17L15 2H9Z" stroke-width="2" />
                             </svg>
                             <span class="cart-count" id="cartCount">0</span>
                             <span class="cart-label">Cart</span>
@@ -142,4 +148,5 @@
     <script src="camera.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
