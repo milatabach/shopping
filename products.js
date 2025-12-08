@@ -515,7 +515,7 @@ const products = [
         category: "sibling",
         price: 99999999.99,
         description: "Unbreakable connection that survives distance, time, and even that incident with your diary! Premium selection - shop now!",
-        image: "https://images.unsplash.com/photo-1521732163-1dcabb73ffb9?w=500&h=600&fit=crop"
+        image: "https://miro.medium.com/1*SFxliIpWVim2AqspiT5zJQ.jpeg"
     },
     // Friends Category Products - Normal to Impossible
     {
