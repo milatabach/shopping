@@ -217,7 +217,7 @@ const products = [
         category: "mom",
         price: 24999.99,
         description: "Go back to when mom's biggest worry was which crayon to use. Batteries definitely not included! Limited edition - get yours today!",
-        image: "https://images.newscientist.com/wp-content/uploads/2024/12/09130202/SEI_232582794.jpg?width=1674"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEDxz9JCBrM4a4QLz3Dr1YxKcHW_evgXjaVg&s"
     },
     {
         id: 51,
@@ -467,7 +467,7 @@ const products = [
         category: "sibling",
         price: 599.99,
         description: "Ability to communicate without words. Especially useful for coordinating against parents! Best value - act fast!",
-        image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=500&h=600&fit=crop"
+        image: "https://cdn.cdnparenting.com/articles/2021/11/10152339/Twin-Telepathy.jpg"
     },
     {
         id: 79,
@@ -564,7 +564,7 @@ const products = [
         category: "friends",
         price: 1499.99,
         description: "All your friends are free at the same time. No more 'let me check my calendar' for three weeks! Premium quality - order now!",
-        image: "https://images.unsplash.com/photo-1521772163-21bda4d32df4?w=500&h=600&fit=crop"
+        image: "https://www.yesware.com/wp-content/uploads/2021/07/yesware-how-to-schedule-a-meeting.jpg"
     },
     {
         id: 91,
