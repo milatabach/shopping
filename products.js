@@ -257,7 +257,7 @@ const products = [
         category: "mom",
         price: 2999,
         description: "Premium connection package: Two guaranteed phone calls per week for one year. Includes thoughtful check-ins and 'how are you doing' conversations! Premium quality - order now!",
-        image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=500&h=600&fit=crop"
+        image: "https://images.squarespace-cdn.com/content/v1/55d35604e4b08af97dadd334/81f5b33b-eb02-46ff-96e1-2846664a9397/senior-woman-talking-on-phone.png"
     },
     {
         id: 52,
