@@ -402,7 +402,7 @@ const products = [
         category: "dad",
         price: 99999.99,
         description: "The knowledge that he made a lasting positive impact and his wisdom will live on through generations! Premium quality - order now!",
-        image: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=500&h=600&fit=crop"
+        image: "https://lesliespeas.com/wp-content/uploads/2023/03/legacy.jpeg"
     },
     {
         id: 71,
