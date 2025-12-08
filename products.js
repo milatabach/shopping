@@ -180,6 +180,14 @@ const products = [
         image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=500&h=600&fit=crop"
     },
     {
+        id: 101,
+        name: "Peace and Quiet Package (3 Hours)",
+        category: "mom",
+        price: 499.99,
+        description: "Three uninterrupted hours of complete silence. No questions, no requests, no interruptions. Mom deserves this moment of pure tranquility! Premium quality - order now!",
+        image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
+    },
+    {
         id: 47,
         name: "Children Who Listen",
         category: "mom",
