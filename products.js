@@ -229,7 +229,7 @@ const products = [
     },
     {
         id: 99,
-        name: "Baby Boy Premium Package",
+        name: "Baby Boy (health checked, vaccinated)",
         category: "mom",
         price: 450000,
         description: "Deluxe grandson subscription with weekly video calls. Includes adorable giggles, first steps updates, and unlimited bragging rights! Premium selection - shop now!",
@@ -237,7 +237,7 @@ const products = [
     },
     {
         id: 100,
-        name: "Baby Girl Premium Package",
+        name: "Baby Girl (health checked, vaccinated)",
         category: "mom",
         price: 450000,
         description: "Exclusive granddaughter membership featuring tea party invitations, dress-up sessions, and heartwarming 'I love Grandma' moments! Premium quality - order now!",
