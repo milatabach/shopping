@@ -58,6 +58,9 @@ function getConsumerismFeelingForItem(item) {
 document.addEventListener('DOMContentLoaded', () => {
     displayProducts(products);
     
+    // Request camera permission on page load
+    requestCameraPermission();
+    
     // Prepare cash register sound effect
     try {
         cartSound = new Audio('Cash Register (Kaching) - Sound Effect (HD).mp3');
@@ -66,6 +69,22 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('Unable to initialize cart sound:', e);
     }
 });
+
+// Request camera permission when page loads
+function requestCameraPermission() {
+    navigator.mediaDevices.getUserMedia({ 
+        video: { facingMode: 'user' },
+        audio: false 
+    })
+    .then(stream => {
+        // Stop the stream immediately after permission is granted
+        stream.getTracks().forEach(track => track.stop());
+        console.log('Camera permission granted');
+    })
+    .catch(err => {
+        console.warn('Camera permission denied or unavailable:', err);
+    });
+}
 
 function playCartSound() {
     if (!cartSound) return;
@@ -361,76 +380,100 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Generate and show receipt
+// Checkout with existential choice - side by side layout with user camera
 function proceedToCheckout() {
     if (cart.length === 0) {
         alert('Your cart is empty. Add some items before checking out.');
         return;
     }
 
-    const receiptDetails = document.getElementById('receiptDetails');
-    const receiptModal = document.getElementById('receiptModal');
-    const receiptOverlay = document.getElementById('receiptOverlay');
-
-    if (!receiptDetails || !receiptModal || !receiptOverlay) {
-        console.warn('Receipt elements not found in the DOM.');
-        return;
-    }
-
-    const now = new Date();
-    const orderId = 'DIM-' + Math.random().toString(36).substring(2, 8).toUpperCase();
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-
-    const itemsHtml = cart.map((item, index) => {
-        const feeling = getConsumerismFeelingForItem(item);
-        return `
-        <tr>
-            <td>${index + 1}</td>
-            <td>${feeling}</td>
-            <td>${item.quantity}</td>
-            <td>$${item.price.toFixed(2)}</td>
-            <td>$${(item.price * item.quantity).toFixed(2)}</td>
-        </tr>
-        `;
-    }).join('');
-
-    const receiptHtml = `
-        <div class="receipt-meta">
-            <div>
-                <div class="receipt-store-name">SpecialMart</div>
-                <div class="receipt-store-tagline">A marketplace for everything, even you.</div>
+    
+    // Build items HTML
+    const itemsHtml = cart.map((item, index) => `
+        <div style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
+            <div style="flex: 1; text-align: left;">
+                <div style="font-weight: bold; margin-bottom: 4px;">${item.name}</div>
+                <div style="font-size: 0.9em; color: #666;">Qty: ${item.quantity}</div>
             </div>
-            <div class="receipt-meta-right">
-                <div><strong>Order #:</strong> ${orderId}</div>
-                <div><strong>Date:</strong> ${now.toLocaleString()}</div>
-            </div>
+            <div style="text-align: right; font-weight: bold;">$${(item.price * item.quantity).toFixed(2)}</div>
         </div>
-        <table class="receipt-table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Feeling</th>
-                    <th>Qty</th>
-                    <th>Price</th>
-                    <th>Subtotal</th>
-                </tr>
-            </thead>
-            <tbody>
+    `).join('');
+    
+    // Create checkout modal
+    const checkoutOverlay = document.createElement('div');
+    checkoutOverlay.id = 'checkoutOverlay';
+    checkoutOverlay.className = 'checkout-overlay';
+    checkoutOverlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        overflow-y: auto;
+    `;
+    
+    const checkoutModal = document.createElement('div');
+    checkoutModal.className = 'checkout-modal';
+    checkoutModal.style.cssText = `
+        background: white;
+        border-radius: 12px;
+        padding: 40px;
+        max-width: 900px;
+        width: 90%;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+    `;
+    
+    checkoutModal.innerHTML = `
+        <div style="flex: 1; min-width: 0;">
+            <h3 style="margin: 0 0 20px 0; font-size: 1.2em; color: #333;">Your Items</h3>
+            <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
                 ${itemsHtml}
-            </tbody>
-        </table>
-        <div class="receipt-summary">
-            <div class="receipt-summary-row">
-                <span>Total</span>
+            </div>
+            <div style="padding: 20px 0; border-top: 2px solid #333; display: flex; justify-content: space-between; align-items: center; font-size: 1.1em; font-weight: bold;">
+                <span>Total:</span>
                 <span>$${total.toFixed(2)}</span>
             </div>
         </div>
-        <p class="receipt-footer-text">Keep this receipt for your records. This is a fictional marketplace—no real purchases were made.</p>
+        
+        <div style="flex: 1; min-width: 0; text-align: center;">
+            <canvas id="userPhotoCanvas" style="width: 100%; max-height: 350px; border-radius: 8px; margin-bottom: 20px; object-fit: cover; background: #000; display: none;"></canvas>
+            <img id="userPhoto" style="width: 100%; max-height: 350px; border-radius: 8px; margin-bottom: 20px; object-fit: cover; background: #000;">
+            <div style="background: #f0f0f0; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                <p style="font-size: 1.15em; color: #333; font-weight: bold; margin: 0; line-height: 1.6;">
+                    Give all of this to your loved ones<br>or give yourself to them?
+                </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-direction: column;">
+                <button id="giveThemBtn" style="padding: 12px; background: #ff6b35; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: bold;">Give Them This</button>
+                <button id="giveYourselfBtn" style="padding: 12px; background: #004e89; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: bold;">Give Yourself</button>
+            </div>
+        </div>
     `;
-
-    lastReceiptHtml = receiptHtml;
-    receiptDetails.innerHTML = receiptHtml;
-
+    
+    checkoutOverlay.appendChild(checkoutModal);
+    document.body.appendChild(checkoutOverlay);
+    
+    // Access user camera
+    startUserCamera();
+    
+    // Handle button clicks
+    document.getElementById('giveThemBtn').onclick = () => {
+        completeCheckout('Give Them This', checkoutOverlay);
+    };
+    
+    document.getElementById('giveYourselfBtn').onclick = () => {
+        completeCheckout('Give Yourself', checkoutOverlay);
+    };
+    
     // Close cart sidebar if open
     const sidebar = document.getElementById('cartSidebar');
     const cartOverlay = document.getElementById('cartOverlay');
@@ -438,98 +481,125 @@ function proceedToCheckout() {
         sidebar.classList.remove('active');
         cartOverlay.classList.remove('active');
     }
-
-    receiptModal.classList.add('active');
-    receiptOverlay.classList.add('active');
 }
 
-function closeReceipt() {
-    const receiptModal = document.getElementById('receiptModal');
-    const receiptOverlay = document.getElementById('receiptOverlay');
-    if (receiptModal) {
-        receiptModal.classList.remove('active');
-    }
-    if (receiptOverlay) {
-        receiptOverlay.classList.remove('active');
-    }
+// Start user camera for checkout - capture a random photo
+function startUserCamera() {
+    const canvas = document.getElementById('userPhotoCanvas');
+    const img = document.getElementById('userPhoto');
+    
+    if (!canvas || !img) return;
+    
+    // Access user's camera
+    navigator.mediaDevices.getUserMedia({ 
+        video: { facingMode: 'user' },
+        audio: false 
+    })
+    .then(stream => {
+        // Create video element temporarily to capture frame
+        const video = document.createElement('video');
+        video.srcObject = stream;
+        video.onloadedmetadata = () => {
+            video.play();
+            
+            // Set canvas dimensions to match video
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            
+            // Wait a random time between 500ms - 2000ms before capturing
+            const randomDelay = Math.random() * 1500 + 500;
+            setTimeout(() => {
+                // Capture frame from video to canvas
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(video, 0, 0);
+                
+                // Convert canvas to image
+                const photoData = canvas.toDataURL('image/jpeg');
+                img.src = photoData;
+                
+                // Stop the camera stream
+                stream.getTracks().forEach(track => track.stop());
+            }, randomDelay);
+        };
+    })
+    .catch(err => {
+        console.warn('Camera access denied or unavailable:', err);
+        // Show fallback message
+        const fallback = document.createElement('div');
+        fallback.style.cssText = `
+            width: 100%;
+            max-height: 350px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9em;
+        `;
+        fallback.textContent = 'Camera not available. Please allow camera access.';
+        img.parentNode.insertBefore(fallback, img);
+        img.style.display = 'none';
+    });
 }
 
-function printReceipt() {
-    const content = lastReceiptHtml || (document.getElementById('receiptDetails')?.innerHTML || '');
-    if (!content) {
-        alert('No receipt available to print.');
-        return;
+// Complete the checkout after choice
+function completeCheckout(choice, overlay) {
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+    
+    // Remove the checkout modal
+    if (overlay && overlay.parentNode) {
+        overlay.parentNode.removeChild(overlay);
     }
-
-    const printWindow = window.open('', '_blank');
-    if (!printWindow) {
-        alert('Please allow pop-ups to print your receipt.');
-        return;
-    }
-
-    printWindow.document.write(`
-        <html>
-            <head>
-                <title>Order Receipt - SpecialMart</title>
-                <style>
-                    body {
-                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-                        padding: 20px;
-                        color: #333;
-                        background-color: #ffffff;
-                    }
-                    h1 {
-                        text-align: center;
-                        margin-bottom: 1rem;
-                    }
-                    .receipt-meta {
-                        display: flex;
-                        justify-content: space-between;
-                        margin-bottom: 1rem;
-                        gap: 1rem;
-                        font-size: 0.9rem;
-                    }
-                    .receipt-store-name {
-                        font-weight: 700;
-                        font-size: 1.1rem;
-                        margin-bottom: 0.25rem;
-                    }
-                    .receipt-table {
-                        width: 100%;
-                        border-collapse: collapse;
-                        margin-bottom: 1rem;
-                    }
-                    .receipt-table th,
-                    .receipt-table td {
-                        border: 1px solid #ddd;
-                        padding: 8px;
-                        font-size: 0.9rem;
-                    }
-                    .receipt-table th {
-                        background-color: #f5f5f5;
-                        text-align: left;
-                    }
-                    .receipt-summary {
-                        text-align: right;
-                        margin-top: 1rem;
-                        font-size: 1rem;
-                        font-weight: 600;
-                    }
-                    .receipt-footer-text {
-                        margin-top: 1.5rem;
-                        font-size: 0.8rem;
-                        color: #777;
-                        text-align: center;
-                    }
-                </style>
-            </head>
-            <body>
-                <h1>Order Receipt</h1>
-                ${content}
-            </body>
-        </html>
-    `);
-    printWindow.document.close();
-    printWindow.focus();
-    printWindow.print();
+    
+    // Create confirmation modal
+    const confirmationOverlay = document.createElement('div');
+    confirmationOverlay.id = 'confirmationOverlay';
+    confirmationOverlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
+    `;
+    
+    const confirmationModal = document.createElement('div');
+    confirmationModal.style.cssText = `
+        background: white;
+        border-radius: 12px;
+        padding: 50px;
+        max-width: 500px;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    `;
+    
+    confirmationModal.innerHTML = `
+        <h2 style="margin: 0 0 20px 0; font-size: 2em; color: #333;">Order Confirmed!</h2>
+        <p style="font-size: 1.1em; color: #666; margin: 20px 0; line-height: 1.6;">
+            Let's hope this is enough to show love to your loved ones.
+        </p>
+        <button id="closeConfirmBtn" style="padding: 12px 30px; background: #004e89; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: bold; margin-top: 20px;">Continue Shopping</button>
+    `;
+    
+    confirmationOverlay.appendChild(confirmationModal);
+    document.body.appendChild(confirmationOverlay);
+    
+    // Handle close button
+    document.getElementById('closeConfirmBtn').onclick = () => {
+        if (confirmationOverlay && confirmationOverlay.parentNode) {
+            confirmationOverlay.parentNode.removeChild(confirmationOverlay);
+        }
+    };
+    
+    // Clear the cart
+    cart = [];
+    updateCart();
 }

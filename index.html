@@ -59,12 +59,6 @@
         <main>
             <div class="products-header">
                 <h2>All Products</h2>
-                <select id="sortSelect" onchange="sortProducts()">
-                    <option value="featured">Featured</option>
-                    <option value="price-low">Price: Low to High</option>
-                    <option value="price-high">Price: High to Low</option>
-                    <option value="name">Name: A to Z</option>
-                </select>
             </div>
             <div class="products-grid" id="productsGrid"></div>
         </main>
@@ -81,28 +75,12 @@
                 <span>Total:</span>
                 <span id="cartTotal">$0.00</span>
             </div>
-            <button class="custom-item-btn" onclick="addCustomItem()">Add Custom Item</button>
             <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
         </div>
     </div>
 
     <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
 
-    <!-- Receipt Modal -->
-    <div class="receipt-overlay" id="receiptOverlay" onclick="closeReceipt()"></div>
-    <div class="receipt-modal" id="receiptModal">
-        <div class="receipt-content">
-            <div class="receipt-header">
-                <h2>Order Receipt</h2>
-                <p class="receipt-subtitle">Thank you for shopping at SpecialMart</p>
-            </div>
-            <div id="receiptDetails"></div>
-            <div class="receipt-actions">
-                <button class="receipt-btn primary" onclick="printReceipt()">Print / Save as PDF</button>
-                <button class="receipt-btn secondary" onclick="closeReceipt()">Close</button>
-            </div>
-        </div>
-    </div>
 
     <script src="products.js"></script>
     <script src="script.js"></script>
