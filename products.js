@@ -394,7 +394,7 @@ const products = [
         category: "dad",
         price: 49999.99,
         description: "Deep satisfaction knowing his children turned out okay despite his questionable parenting decisions! Transform your experience - buy today!",
-        image: "https://images.unsplash.com/photo-1521592163-0a1dd7228f2d?w=500&h=600&fit=crop"
+        image: "https://www.beaminister.org/assets/beaminister/blog/scaled/proud-person-standing-with-hands-on-hips.jpg?t=1668701526997"
     },
     {
         id: 70,
