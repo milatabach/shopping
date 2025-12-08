@@ -241,7 +241,7 @@ const products = [
         category: "mom",
         price: 450000,
         description: "Deluxe grandson subscription with weekly video calls. Includes adorable giggles, first steps updates, and unlimited bragging rights! Premium selection - shop now!",
-        image: "https://images.pexels.com/photos/159711/pexels-photo-159711.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
+        image: "https://m.media-amazon.com/images/I/71IsdR+cmtL._AC_SX679_.jpg"
     },
     {
         id: 100,
