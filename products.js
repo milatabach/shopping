@@ -540,7 +540,7 @@ const products = [
         category: "friends",
         price: 24.99,
         description: "Classic friendship bracelets that prove you're best friends forever, or at least until next year! Premium quality guaranteed!",
-        image: "https://images.unsplash.com/photo-1521642163-ae6968895b74?w=500&h=600&fit=crop"
+        image: "https://i.ebayimg.com/images/g/CbsAAOSwnTVj-4~~/s-l400.jpg"
     },
     {
         id: 88,
