@@ -97,7 +97,7 @@ const products = [
         category: "mom",
         price: 189.99,
         description: "Luxurious 100% cashmere sweater with ribbed trim. Ultra-soft and warm for cold weather styling.",
-        image: "https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
+        image: "https://images.pexels.com/photos/996330/pexels-photo-996330.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
         id: 37,
@@ -129,7 +129,7 @@ const products = [
         category: "mom",
         price: 79.99,
         description: "Super soft throw blanket for mom's reading corner. Machine washable and irresistibly cuddly.",
-        image: "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
+        image: "https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
         id: 41,
