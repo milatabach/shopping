@@ -6,7 +6,6 @@ let lastReceiptHtml = '';
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
     displayProducts(products);
-    setupSearchListener();
 });
 
 // Display products on the page
@@ -18,17 +17,12 @@ function displayProducts(productsToDisplay) {
         const card = document.createElement('div');
         card.className = 'product-card';
         
-        // Special styling for user products
-        if (product.category === 'featured' && product.name.includes('YOU')) {
-            card.classList.add('user-product');
-        }
         
         card.innerHTML = `
             <img src="${product.image}" alt="${product.name}" class="product-image">
             <div class="product-info">
-                <div class="product-category">${product.category.replace('mens', "Men's").replace('womens', "Women's").replace('accessories', 'Accessories').replace('featured', 'Featured')}</div>
+                <div class="product-category">${product.category.replace('mom', 'Mom').replace('dad', 'Dad').replace('sibling', 'Sibling').replace('friends', 'Friends').replace('mens', "Men's").replace('womens', "Women's").replace('accessories', 'Accessories').replace('featured', 'Featured')}</div>
                 <div class="product-name">${product.name}</div>
-                <div class="product-description">${product.description}</div>
                 <div class="product-footer">
                     <div class="product-price">$${product.price.toFixed(2)}</div>
                     <button class="add-to-cart-btn" onclick="addToCart(${product.id})">Add to Cart</button>
@@ -161,63 +155,29 @@ function showCartNotification() {
 
 // Filter products
 function filterProducts() {
-    const categoryCheckboxes = document.querySelectorAll('.filter-group input[value="mens"], .filter-group input[value="womens"], .filter-group input[value="accessories"]');
-    const priceCheckboxes = document.querySelectorAll('.filter-group input[value="0-50"], .filter-group input[value="50-100"], .filter-group input[value="100-200"], .filter-group input[value="200+"]');
+    const categoryCheckboxes = document.querySelectorAll('.filter-group input[value="mom"], .filter-group input[value="dad"], .filter-group input[value="sibling"], .filter-group input[value="friends"]');
     
     const selectedCategories = Array.from(categoryCheckboxes)
         .filter(cb => cb.checked)
         .map(cb => cb.value);
     
-    const selectedPriceRanges = Array.from(priceCheckboxes)
-        .filter(cb => cb.checked)
-        .map(cb => cb.value);
-    
     filteredProducts = products.filter(product => {
-        // Category filter
-        const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(product.category);
-        
-        // Price filter
-        let priceMatch = selectedPriceRanges.length === 0;
-        if (!priceMatch) {
-            priceMatch = selectedPriceRanges.some(range => {
-                if (range === '0-50') return product.price < 50;
-                if (range === '50-100') return product.price >= 50 && product.price < 100;
-                if (range === '100-200') return product.price >= 100 && product.price < 200;
-                if (range === '200+') return product.price >= 200;
-                return false;
-            });
-        }
-        
-        return categoryMatch && priceMatch;
+        // Category filter only
+        return selectedCategories.length === 0 || selectedCategories.includes(product.category);
     });
     
-    applySearchAndSort();
+    applySortOnly();
 }
 
 // Sort products
 function sortProducts() {
-    applySearchAndSort();
+    applySortOnly();
 }
 
-// Setup search listener
-function setupSearchListener() {
-    const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('input', (e) => {
-        applySearchAndSort();
-    });
-}
-
-// Apply search and sort
-function applySearchAndSort() {
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+// Apply sorting only (no search)
+function applySortOnly() {
     const sortValue = document.getElementById('sortSelect').value;
-    
-    // Apply search filter
-    let results = filteredProducts.filter(product => 
-        product.name.toLowerCase().includes(searchTerm) ||
-        product.description.toLowerCase().includes(searchTerm) ||
-        product.category.toLowerCase().includes(searchTerm)
-    );
+    let results = [...filteredProducts];
     
     // Apply sorting
     switch(sortValue) {
@@ -255,14 +215,6 @@ function proceedToCheckout() {
         return;
     }
     
-    // Use any stored camera photo to feature the user in the hero banner
-    if (typeof addUserProducts === 'function') {
-        try {
-            addUserProducts();
-        } catch (e) {
-            console.warn('Hero update failed:', e);
-        }
-    }
 
     const receiptDetails = document.getElementById('receiptDetails');
     const receiptModal = document.getElementById('receiptModal');
@@ -290,7 +242,7 @@ function proceedToCheckout() {
     const receiptHtml = `
         <div class="receipt-meta">
             <div>
-                <div class="receipt-store-name">Dead Internet Market Place</div>
+                <div class="receipt-store-name">SpecialMart</div>
                 <div class="receipt-store-tagline">A marketplace for everything, even you.</div>
             </div>
             <div class="receipt-meta-right">
@@ -363,7 +315,7 @@ function printReceipt() {
     printWindow.document.write(`
         <html>
             <head>
-                <title>Order Receipt - Dead Internet Market Place</title>
+                <title>Order Receipt - SpecialMart</title>
                 <style>
                     body {
                         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;

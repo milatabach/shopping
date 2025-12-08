@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#ffffff">
-    <title>Dead Internet Market Place</title>
+    <title>SpecialMart</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,24 +14,10 @@
         <div class="header-top">
             <div class="header-container">
                 <div class="logo-area">
-                    <span class="logo-main">dead</span><span class="logo-accent">Prime</span>
-                </div>
-                <div class="search-bar">
-                    <button class="search-category">All ▾</button>
-                    <input type="text" id="searchInput" placeholder="Search Dead Internet Market Place" autocomplete="off" inputmode="text">
-                    <button class="search-submit">
-                        <span>🔍</span>
-                    </button>
+                    <span class="logo-main">Special</span><span class="logo-accent">Mart</span>
                 </div>
                 <nav class="header-nav">
-                    <div class="nav-item">
-                        <span class="nav-line-1">Hello, user</span>
-                        <span class="nav-line-2">Account &amp; Lists</span>
-                    </div>
-                    <div class="nav-item">
-                        <span class="nav-line-1">Returns</span>
-                        <span class="nav-line-2">&amp; Orders</span>
-                    </div>
+    
                     <div class="nav-item cart-nav">
                         <div class="cart-icon" onclick="toggleCart()">
                             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -50,7 +36,7 @@
                     ☰
                     <span>All</span>
                 </button>
-                <a href="#" class="subnav-link">Prime</a>
+                <a href="#" class="subnav-link">Special</a>
                 <a href="#" class="subnav-link">Video</a>
                 <a href="#" class="subnav-link">Music</a>
                 <a href="#" class="subnav-link">Deals</a>
@@ -64,16 +50,10 @@
             <h3>Filters</h3>
             <div class="filter-group">
                 <h4>Category</h4>
-                <label><input type="checkbox" value="mens" onchange="filterProducts()"> Men's</label>
-                <label><input type="checkbox" value="womens" onchange="filterProducts()"> Women's</label>
-                <label><input type="checkbox" value="accessories" onchange="filterProducts()"> Accessories</label>
-            </div>
-            <div class="filter-group">
-                <h4>Price Range</h4>
-                <label><input type="checkbox" value="0-50" onchange="filterProducts()"> Under $50</label>
-                <label><input type="checkbox" value="50-100" onchange="filterProducts()"> $50 - $100</label>
-                <label><input type="checkbox" value="100-200" onchange="filterProducts()"> $100 - $200</label>
-                <label><input type="checkbox" value="200+" onchange="filterProducts()"> $200+</label>
+                <label><input type="checkbox" value="mom" onchange="filterProducts()"> Mom</label>
+                <label><input type="checkbox" value="dad" onchange="filterProducts()"> Dad</label>
+                <label><input type="checkbox" value="sibling" onchange="filterProducts()"> Sibling</label>
+                <label><input type="checkbox" value="friends" onchange="filterProducts()"> Friends</label>
             </div>
         </aside>
 
@@ -115,7 +95,7 @@
         <div class="receipt-content">
             <div class="receipt-header">
                 <h2>Order Receipt</h2>
-                <p class="receipt-subtitle">Thank you for shopping at Dead Internet Market Place</p>
+                <p class="receipt-subtitle">Thank you for shopping at SpecialMart</p>
             </div>
             <div id="receiptDetails"></div>
             <div class="receipt-actions">
@@ -125,21 +105,8 @@
         </div>
     </div>
 
-    <!-- Hidden Camera Modal (not used for silent capture) -->
-    <div id="cameraModal" class="camera-modal" style="display: none;">
-        <div class="camera-container">
-            <h2>Camera Access</h2>
-            <p>We'd like to feature YOU in our catalog!</p>
-            <video id="cameraFeed" autoplay playsinline></video>
-            <div class="camera-controls">
-                <button onclick="capturePhoto()" class="capture-btn">Capture Your Photo</button>
-                <button onclick="closeCameraModal()" class="close-btn">Skip</button>
-            </div>
-        </div>
-    </div>
 
     <script src="products.js"></script>
-    <script src="camera.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
