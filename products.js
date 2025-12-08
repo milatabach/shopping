@@ -362,7 +362,7 @@ const products = [
         category: "dad",
         price: 4999.99,
         description: "Genuine acknowledgment that dad might actually know what he's talking about. Extremely rare! Transform your experience - buy today!",
-        image: "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
+        image: "https://www.liahonaacademy.com/wp-content/uploads/2024/09/shutterstock_23623477.jpg"
     },
     {
         id: 67,
