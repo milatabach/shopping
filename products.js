@@ -370,7 +370,7 @@ const products = [
         category: "dad",
         price: 9999.99,
         description: "Complete elimination of that mysterious back pain that started in his thirties for no apparent reason! Limited edition - get yours today!",
-        image: "https://images.pexels.com/photos/159711/pexels-photo-159711.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8-g4qmZzC1OThNfgcom0wDiFYU-Z8aJgKKA&s"
     },
     {
         id: 68,
