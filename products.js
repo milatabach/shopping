@@ -273,7 +273,7 @@ const products = [
         category: "mom",
         price: 999999999.99,
         description: "Discover your true purpose and unlock unlimited potential! This exclusive package includes profound life insights, enhanced clarity, and a deeper sense of meaning. Transform your existence with this premium life-enhancement solution. Limited time offer - act now!",
-        image: "https://images.unsplash.com/photo-1521672163-ae6968895b74?w=500&h=600&fit=crop"
+        image: "https://www.happiness.com/community/uploads/monthly_2020_05/how-to-find-meaning-in-life.jpg.a52d2ddc8f855da358d4aaba7a1a8a47.jpg"
     },
     // Dad Category Products - Normal to Impossible
     {
