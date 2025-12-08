@@ -217,7 +217,7 @@ const products = [
         category: "mom",
         price: 24999.99,
         description: "Go back to when mom's biggest worry was which crayon to use. Batteries definitely not included! Limited edition - get yours today!",
-        image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
+        image: "https://images.newscientist.com/wp-content/uploads/2024/12/09130202/SEI_232582794.jpg?width=1674"
     },
     {
         id: 51,
