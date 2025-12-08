@@ -435,7 +435,7 @@ const products = [
         category: "sibling",
         price: 89.99,
         description: "Classic board games for sibling bonding time. Warning: May cause temporary alliances and inevitable arguments! Exclusive offer - limited stock!",
-        image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=500&h=600&fit=crop"
+        image: "https://m.media-amazon.com/images/I/813J0DBqCTL._AC_UF894,1000_QL80_.jpg"
     },
     {
         id: 75,
