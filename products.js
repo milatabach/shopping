@@ -364,6 +364,14 @@ const products = [
         image: "https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?w=500&h=600&fit=crop"
     },
     {
+        id: 98,
+        name: "Forever Young",
+        category: "dad",
+        price: 15900,
+        description: "Forever Young package",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop"
+    },
+    {
         id: 69,
         name: "Pride",
         category: "dad",
