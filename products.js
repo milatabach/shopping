@@ -366,11 +366,11 @@ const products = [
     },
     {
         id: 68,
-        name: "Hair Restoration",
+        name: "Hair Growth",
         category: "dad",
         price: 19999.99,
         description: "Full head of hair from his twenties, exactly as thick and stylish as he remembers it being! Transform your experience - buy today!",
-        image: "https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?w=500&h=600&fit=crop"
+        image: "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
         id: 98,
