@@ -75,8 +75,8 @@ function showCameraPermissionRequest() {
         <div style="margin-bottom: 1rem; font-size: 1.6rem;"><strong>📸 Feature YOU in our catalog!</strong></div>
         <div style="margin-bottom: 2rem; font-size: 1.2rem;">Allow camera access to see yourself as a featured product.</div>
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <button onclick="requestCameraAccess()" style="background: #2980b9; color: white; border: none; padding: 1rem 2rem; border-radius: 8px; cursor: pointer; font-size: 1.1rem; font-weight: 600; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Allow Camera</button>
-            <button onclick="this.parentElement.parentElement.remove()" style="background: transparent; color: white; border: 2px solid white; padding: 1rem 2rem; border-radius: 8px; cursor: pointer; font-size: 1.1rem; font-weight: 600; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Skip</button>
+            <button onclick="requestCameraAccess()" style="background: transparent; color: white; border: 2px solid white; padding: 1rem 2rem; border-radius: 8px; cursor: pointer; font-size: 1.1rem; font-weight: 600; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Allow Camera</button>
+            <button onclick="this.parentElement.parentElement.remove()" style="background: #2980b9; color: white; border: none; padding: 0.85rem 1.7rem; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Skip</button>
         </div>
     `;
     document.body.appendChild(notification);
