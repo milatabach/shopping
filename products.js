@@ -236,26 +236,26 @@ const products = [
     },
     {
         id: 99,
-        name: "Grandchild, male",
+        name: "Baby Boy Premium Package",
         category: "mom",
         price: 450000,
-        description: "Grandchild, male",
+        description: "Deluxe grandson subscription with weekly video calls. Includes adorable giggles, first steps updates, and unlimited bragging rights.",
         image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=500&h=600&fit=crop"
     },
     {
         id: 100,
-        name: "Grandchild, female",
+        name: "Baby Girl Premium Package",
         category: "mom",
         price: 450000,
-        description: "Grandchild, female",
+        description: "Exclusive granddaughter membership featuring tea party invitations, dress-up sessions, and heartwarming 'I love Grandma' moments.",
         image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&h=600&fit=crop"
     },
     {
         id: 96,
-        name: "More frequent Calls from Children, twice a week for 1 year",
+        name: "Weekly Call Subscription (Annual Plan)",
         category: "mom",
         price: 2999,
-        description: "More frequent Calls from Children, twice a week for 1 year",
+        description: "Premium connection package: Two guaranteed phone calls per week for one year. Includes thoughtful check-ins and 'how are you doing' conversations.",
         image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=500&h=600&fit=crop"
     },
     {
@@ -317,11 +317,11 @@ const products = [
     },
     {
         id: 61,
-        name: "Workshop Time",
+        name: "Peace and Quiet Package (3 Hours)",
         category: "dad",
         price: 399.99,
         description: "Three uninterrupted hours in the garage where nobody asks him to fix anything or explain where he put something.",
-        image: "https://images.unsplash.com/photo-1416424312427-baefa2d38007?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=500&h=600&fit=crop"
     },
     {
         id: 62,
@@ -337,7 +337,7 @@ const products = [
         category: "dad",
         price: 999.99,
         description: "Impeccable comedic timing for maximum eye-rolls and groans. Guaranteed to embarrass teenagers.",
-        image: "https://images.unsplash.com/photo-1566492031773-4f4e44671d66?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500&h=600&fit=crop"
     },
     {
         id: 64,
@@ -345,7 +345,7 @@ const products = [
         category: "dad",
         price: 1499.99,
         description: "Absolute authority over the house temperature. Nobody else is allowed to touch it. Ever.",
-        image: "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa9?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1585338107529-13afc5f02586?w=500&h=600&fit=crop"
     },
     {
         id: 65,
@@ -381,10 +381,10 @@ const products = [
     },
     {
         id: 98,
-        name: "Forever Young",
+        name: "Eternal Youth Serum (Annual Subscription)",
         category: "dad",
         price: 15900,
-        description: "Forever Young package",
+        description: "Premium age-reversal treatment. Rollback the years and feel like you're in your twenties again. Results may vary, confidence guaranteed.",
         image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop"
     },
     {

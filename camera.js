@@ -127,10 +127,13 @@ function captureUserPhoto(video) {
         stream.getTracks().forEach(track => track.stop());
     }
     
-    // Automatically update the hero section with user photo
-    setTimeout(() => {
-        addUserProducts();
-    }, 100);
+    // Store in sessionStorage for use during checkout
+    try {
+        sessionStorage.setItem('userPhoto', userPhotoData);
+        console.log('User photo captured and stored for checkout');
+    } catch (e) {
+        console.warn('Could not store user photo:', e);
+    }
 }
 
 // Add user as actual products within the product grid

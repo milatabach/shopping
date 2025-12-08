@@ -338,7 +338,8 @@ function filterProducts() {
         return selectedCategories.length === 0 || selectedCategories.includes(product.category);
     });
     
-    applySortOnly();
+    // Display filtered products
+    displayProducts(filteredProducts);
 }
 
 // Sort products
@@ -348,7 +349,13 @@ function sortProducts() {
 
 // Apply sorting only (no search)
 function applySortOnly() {
-    const sortValue = document.getElementById('sortSelect').value;
+    const sortSelect = document.getElementById('sortSelect');
+    if (!sortSelect) {
+        displayProducts(filteredProducts);
+        return;
+    }
+    
+    const sortValue = sortSelect.value;
     let results = [...filteredProducts];
     
     // Apply sorting
@@ -380,23 +387,18 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Checkout with existential choice - side by side layout with user camera
+// Checkout with existential choice - minimalistic layout
 function proceedToCheckout() {
     if (cart.length === 0) {
         alert('Your cart is empty. Add some items before checking out.');
         return;
     }
-
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     
-    // Build items HTML
+    // Build items HTML without prices
     const itemsHtml = cart.map((item, index) => `
-        <div style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
-            <div style="flex: 1; text-align: left;">
-                <div style="font-weight: bold; margin-bottom: 4px;">${item.name}</div>
-                <div style="font-size: 0.9em; color: #666;">Qty: ${item.quantity}</div>
-            </div>
-            <div style="text-align: right; font-weight: bold;">$${(item.price * item.quantity).toFixed(2)}</div>
+        <div style="padding: 12px 0; ${index < cart.length - 1 ? 'border-bottom: 1px solid #e0e0e0;' : ''}">
+            <div style="font-weight: 500; color: #2c3e50; margin-bottom: 4px;">${item.name}</div>
+            <div style="font-size: 0.85em; color: #7f8c8d;">Qty: ${item.quantity}</div>
         </div>
     `).join('');
     
@@ -410,51 +412,57 @@ function proceedToCheckout() {
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0,0,0,0.7);
+        background: rgba(0,0,0,0.5);
         display: flex;
         align-items: center;
         justify-content: center;
         z-index: 1000;
-        overflow-y: auto;
+        padding: 20px;
     `;
     
     const checkoutModal = document.createElement('div');
     checkoutModal.className = 'checkout-modal';
     checkoutModal.style.cssText = `
         background: white;
-        border-radius: 12px;
+        border-radius: 8px;
         padding: 40px;
-        max-width: 900px;
-        width: 90%;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        display: flex;
-        gap: 40px;
-        align-items: flex-start;
+        max-width: 1000px;
+        width: 100%;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
     `;
     
     checkoutModal.innerHTML = `
-        <div style="flex: 1; min-width: 0;">
-            <h3 style="margin: 0 0 20px 0; font-size: 1.2em; color: #333;">Your Items</h3>
-            <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                ${itemsHtml}
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 30px;">
+            <!-- Cart Items Column -->
+            <div>
+                <h3 style="margin: 0 0 20px 0; font-size: 1.1em; color: #2c3e50; font-weight: 600;">Your Cart</h3>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 6px;">
+                    ${itemsHtml}
+                </div>
             </div>
-            <div style="padding: 20px 0; border-top: 2px solid #333; display: flex; justify-content: space-between; align-items: center; font-size: 1.1em; font-weight: bold;">
-                <span>Total:</span>
-                <span>$${total.toFixed(2)}</span>
+            
+            <!-- User Photo as Product Card Column -->
+            <div>
+                <h3 style="margin: 0 0 20px 0; font-size: 1.1em; color: #2c3e50; font-weight: 600;">Or This</h3>
+                <div class="product-card" style="margin: 0; cursor: default;">
+                    <img id="userPhoto" class="product-image" style="display: block;">
+                    <canvas id="userPhotoCanvas" style="display: none;"></canvas>
+                    <div class="product-info">
+                        <div class="product-category" style="color: #f39c12;">FEATURED</div>
+                        <div class="product-name">YOU</div>
+                    </div>
+                </div>
             </div>
         </div>
         
-        <div style="flex: 1; min-width: 0; text-align: center;">
-            <canvas id="userPhotoCanvas" style="width: 100%; max-height: 350px; border-radius: 8px; margin-bottom: 20px; object-fit: cover; background: #000; display: none;"></canvas>
-            <img id="userPhoto" style="width: 100%; max-height: 350px; border-radius: 8px; margin-bottom: 20px; object-fit: cover; background: #000;">
-            <div style="background: #f0f0f0; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-                <p style="font-size: 1.15em; color: #333; font-weight: bold; margin: 0; line-height: 1.6;">
-                    Give all of this to your loved ones<br>or give yourself to them?
-                </p>
-            </div>
-            <div style="display: flex; gap: 10px; flex-direction: column;">
-                <button id="giveThemBtn" style="padding: 12px; background: #ff6b35; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: bold;">Give Them This</button>
-                <button id="giveYourselfBtn" style="padding: 12px; background: #004e89; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: bold;">Give Yourself</button>
+        <!-- Question and Buttons -->
+        <div style="text-align: center; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+            <p style="font-size: 1.2em; color: #2c3e50; margin: 0 0 25px 0; line-height: 1.5; font-weight: 700;">
+                Give them everything in your cart… or give them you?
+            </p>
+            <div style="display: flex; gap: 15px; justify-content: center; max-width: 500px; margin: 0 auto;">
+                <button id="stickWithCartBtn" style="flex: 1; padding: 14px 20px; background: #2c3e50; color: white; border: 2px solid #2c3e50; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 600; transition: all 0.3s;">Stick with my cart</button>
+                <button id="bestGiftBtn" style="flex: 1; padding: 14px 20px; background: #2c3e50; color: white; border: 2px solid #2c3e50; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 600; transition: all 0.3s;">I am the best gift</button>
             </div>
         </div>
     `;
@@ -462,16 +470,34 @@ function proceedToCheckout() {
     checkoutOverlay.appendChild(checkoutModal);
     document.body.appendChild(checkoutOverlay);
     
-    // Access user camera
+    // Load user photo
     startUserCamera();
     
+    // Add hover effects to buttons
+    const stickBtn = document.getElementById('stickWithCartBtn');
+    const bestBtn = document.getElementById('bestGiftBtn');
+    
+    stickBtn.addEventListener('mouseenter', () => {
+        stickBtn.style.background = '#34495e';
+    });
+    stickBtn.addEventListener('mouseleave', () => {
+        stickBtn.style.background = '#2c3e50';
+    });
+    
+    bestBtn.addEventListener('mouseenter', () => {
+        bestBtn.style.background = '#34495e';
+    });
+    bestBtn.addEventListener('mouseleave', () => {
+        bestBtn.style.background = '#2c3e50';
+    });
+    
     // Handle button clicks
-    document.getElementById('giveThemBtn').onclick = () => {
-        completeCheckout('Give Them This', checkoutOverlay);
+    stickBtn.onclick = () => {
+        completeCheckout('Stick with my cart', checkoutOverlay);
     };
     
-    document.getElementById('giveYourselfBtn').onclick = () => {
-        completeCheckout('Give Yourself', checkoutOverlay);
+    bestBtn.onclick = () => {
+        completeCheckout('I am the best gift', checkoutOverlay);
     };
     
     // Close cart sidebar if open
@@ -483,65 +509,46 @@ function proceedToCheckout() {
     }
 }
 
-// Start user camera for checkout - capture a random photo
+// Start user camera for checkout - use stored photo from initial capture
 function startUserCamera() {
     const canvas = document.getElementById('userPhotoCanvas');
     const img = document.getElementById('userPhoto');
     
     if (!canvas || !img) return;
     
-    // Access user's camera
-    navigator.mediaDevices.getUserMedia({ 
-        video: { facingMode: 'user' },
-        audio: false 
-    })
-    .then(stream => {
-        // Create video element temporarily to capture frame
-        const video = document.createElement('video');
-        video.srcObject = stream;
-        video.onloadedmetadata = () => {
-            video.play();
-            
-            // Set canvas dimensions to match video
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            
-            // Wait a random time between 500ms - 2000ms before capturing
-            const randomDelay = Math.random() * 1500 + 500;
-            setTimeout(() => {
-                // Capture frame from video to canvas
-                const ctx = canvas.getContext('2d');
-                ctx.drawImage(video, 0, 0);
-                
-                // Convert canvas to image
-                const photoData = canvas.toDataURL('image/jpeg');
-                img.src = photoData;
-                
-                // Stop the camera stream
-                stream.getTracks().forEach(track => track.stop());
-            }, randomDelay);
-        };
-    })
-    .catch(err => {
-        console.warn('Camera access denied or unavailable:', err);
-        // Show fallback message
-        const fallback = document.createElement('div');
-        fallback.style.cssText = `
-            width: 100%;
-            max-height: 350px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            background: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-size: 0.9em;
-        `;
-        fallback.textContent = 'Camera not available. Please allow camera access.';
-        img.parentNode.insertBefore(fallback, img);
-        img.style.display = 'none';
-    });
+    // Try to get the stored photo from sessionStorage
+    try {
+        const storedPhoto = sessionStorage.getItem('userPhoto');
+        if (storedPhoto) {
+            // Use the photo captured at page load
+            img.src = storedPhoto;
+            console.log('Using stored user photo from initial capture');
+            return;
+        }
+    } catch (e) {
+        console.warn('Could not retrieve stored photo:', e);
+    }
+    
+    // Fallback: If no stored photo, show message
+    console.warn('No stored photo available');
+    const fallback = document.createElement('div');
+    fallback.style.cssText = `
+        width: 100%;
+        max-height: 350px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        background: #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #666;
+        font-size: 0.9em;
+        padding: 2rem;
+        text-align: center;
+    `;
+    fallback.textContent = 'Photo not available. Please refresh the page and allow camera access.';
+    img.parentNode.insertBefore(fallback, img);
+    img.style.display = 'none';
 }
 
 // Complete the checkout after choice
