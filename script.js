@@ -589,9 +589,9 @@ function completeCheckout(choice, overlay) {
     `;
     
     confirmationModal.innerHTML = `
-        <h2 style="margin: 0 0 20px 0; font-size: 2em; color: #333;">Order Confirmed!</h2>
+        <h2 style="margin: 0 0 20px 0; font-size: 2em; color: #333;"> Do you think this will be enough to have their love?</h2>
         <p style="font-size: 1.1em; color: #666; margin: 20px 0; line-height: 1.6;">
-            Let's hope this is enough to show love to your loved ones.
+            Order Confirmed! Your loved one should expect it in the mail in 1–2 hours.
         </p>
         <button id="closeConfirmBtn" style="padding: 12px 30px; background: #004e89; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: bold; margin-top: 20px;">Continue Shopping</button>
     `;
