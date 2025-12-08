@@ -483,7 +483,7 @@ const products = [
         category: "sibling",
         price: 2499.99,
         description: "Permanent end to the eternal question of who is mom's favorite. Spoiler: it's neither of you! Limited edition - get yours today!",
-        image: "https://images.unsplash.com/photo-1521742163-1dcabb73ffb9?w=500&h=600&fit=crop"
+        image: "https://carpediempreschool.com/wp-content/uploads/2017/07/Blog-Post-30-Sibling-Rivalry.jpg"
     },
     {
         id: 81,
