@@ -55,38 +55,49 @@ function captureUserPhoto(video) {
 function addUserProducts() {
     if (!userPhotoData) return;
 
-    const heroBanner = document.querySelector('.hero-banner');
-    const heroTitle = document.querySelector('.hero-copy h2');
-    const heroSubtitle = document.querySelector('.hero-subtitle');
-    const heroPrice = document.querySelector('.hero-price');
-    const heroSmallText = document.querySelector('.hero-small-text');
-    const heroArt = document.querySelector('.hero-art');
+    // Create or update a special "YOU" product in the catalog
+    const userProductId = 1000;
+    const userProduct = {
+        id: userProductId,
+        name: 'YOU (Featured Product)',
+        category: 'accessories',
+        price: 19.99,
+        description: 'A limited-time listing of your captured image, featured as a product in the Dead Internet Market Place.',
+        image: userPhotoData,
+        isUserProduct: true
+    };
 
-    if (heroBanner) {
-        heroBanner.classList.add('hero-has-user');
+    if (typeof products !== 'undefined' && Array.isArray(products)) {
+        const existingIndex = products.findIndex(p => p.id === userProductId);
+        if (existingIndex >= 0) {
+            products[existingIndex] = userProduct;
+        } else {
+            // Put the user product at the front so it’s clearly visible
+            products.unshift(userProduct);
+        }
     }
 
-    if (heroTitle) {
-        heroTitle.textContent = 'YOU';
+    // Keep filteredProducts in sync if it exists
+    if (typeof filteredProducts !== 'undefined' && Array.isArray(filteredProducts)) {
+        const existingFilteredIndex = filteredProducts.findIndex(p => p.id === userProductId);
+        if (existingFilteredIndex >= 0) {
+            filteredProducts[existingFilteredIndex] = userProduct;
+        } else {
+            filteredProducts.unshift(userProduct);
+        }
     }
 
-    if (heroSubtitle) {
-        heroSubtitle.textContent = 'Now starring in our catalog';
-    }
-
-    if (heroPrice) {
-        heroPrice.innerHTML = '$19<span class="hero-price-cents">99</span>';
-    }
-
-    if (heroSmallText) {
-        heroSmallText.textContent = 'This featured product is generated from your camera snapshot.';
-    }
-
-    if (heroArt) {
-        heroArt.style.backgroundImage = `url(${userPhotoData})`;
-        heroArt.style.backgroundSize = 'cover';
-        heroArt.style.backgroundPosition = 'center';
-        heroArt.style.backgroundRepeat = 'no-repeat';
+    // Re-render the products grid, respecting current search/sort if possible
+    if (typeof applySearchAndSort === 'function') {
+        try {
+            applySearchAndSort();
+        } catch (e) {
+            if (typeof displayProducts === 'function') {
+                displayProducts(products);
+            }
+        }
+    } else if (typeof displayProducts === 'function') {
+        displayProducts(products);
     }
 }
 
