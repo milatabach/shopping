@@ -47,7 +47,7 @@ const products = [
         category: "accessories",
         price: 999.99,
         description: "Pure, bottled happiness. A limited edition item that brings instant joy. One size fits all emotions. No refunds on used happiness.",
-        image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=500&h=600&fit=crop"
+        image: "https://images.pexels.com/photos/1070536/pexels-photo-1070536.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
         id: 32,
@@ -217,15 +217,7 @@ const products = [
         category: "mom",
         price: 49999.99,
         description: "Pure, concentrated joy specifically formulated for moms. Side effects include spontaneous smiling and contentment.",
-        image: "https://images.unsplash.com/photo-1521692163-ae6968895b74?w=500&h=600&fit=crop"
-    },
-    {
-        id: 54,
-        name: "World Peace",
-        category: "mom",
-        price: 999999.99,
-        description: "Mom always said if everyone just listened to their mothers, the world would be a better place. Here's proof.",
-        image: "https://images.unsplash.com/photo-1521682163-ae6968895b74?w=500&h=600&fit=crop"
+        image: "https://images.pexels.com/photos/1070536/pexels-photo-1070536.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
         id: 49,
