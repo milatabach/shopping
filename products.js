@@ -217,7 +217,7 @@ const products = [
         category: "mom",
         price: 24999.99,
         description: "Go back to when mom's biggest worry was which crayon to use. Batteries definitely not included! Limited edition - get yours today!",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Back_to_the_Future_DeLorean_Time_Machine.jpg/800px-Back_to_the_Future_DeLorean_Time_Machine.jpg"
+        image: "https://images.newscientist.com/wp-content/uploads/2024/12/09130202/SEI_232582794.jpg?width=1674"
     },
     {
         id: 51,
