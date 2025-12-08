@@ -327,15 +327,12 @@ function showToast(message, type = 'success') {
 
 // Filter products
 function filterProducts() {
-    const categoryCheckboxes = document.querySelectorAll('.filter-group input[value="mom"], .filter-group input[value="dad"], .filter-group input[value="sibling"], .filter-group input[value="friends"]');
-    
-    const selectedCategories = Array.from(categoryCheckboxes)
-        .filter(cb => cb.checked)
-        .map(cb => cb.value);
+    const selectedRadio = document.querySelector('input[name="category"]:checked');
+    const selectedCategory = selectedRadio ? selectedRadio.value : 'all';
     
     filteredProducts = products.filter(product => {
-        // Category filter only
-        return selectedCategories.length === 0 || selectedCategories.includes(product.category);
+        // Category filter - show all if 'all' is selected
+        return selectedCategory === 'all' || product.category === selectedCategory;
     });
     
     // Display filtered products

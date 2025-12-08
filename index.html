@@ -36,10 +36,11 @@
             <h3>Filters</h3>
             <div class="filter-group">
                 <h4>Category</h4>
-                <label><input type="checkbox" value="mom" onchange="filterProducts()"> Mom</label>
-                <label><input type="checkbox" value="dad" onchange="filterProducts()"> Dad</label>
-                <label><input type="checkbox" value="sibling" onchange="filterProducts()"> Sibling</label>
-                <label><input type="checkbox" value="friends" onchange="filterProducts()"> Friends</label>
+                <label><input type="radio" name="category" value="all" checked onchange="filterProducts()"> All</label>
+                <label><input type="radio" name="category" value="mom" onchange="filterProducts()"> Mom</label>
+                <label><input type="radio" name="category" value="dad" onchange="filterProducts()"> Dad</label>
+                <label><input type="radio" name="category" value="sibling" onchange="filterProducts()"> Sibling</label>
+                <label><input type="radio" name="category" value="friends" onchange="filterProducts()"> Friends</label>
             </div>
         </aside>
 
