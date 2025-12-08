@@ -499,7 +499,7 @@ const products = [
         category: "sibling",
         price: 9999.99,
         description: "Recognition that you're both amazing in your own ways. No more comparisons or competition! Best value - act fast!",
-        image: "https://images.unsplash.com/photo-1521662163-ae6968895b74?w=500&h=600&fit=crop"
+        image: "https://clfroseburg.com/wp-content/uploads/2021/03/MutualRespect.jpg"
     },
     {
         id: 83,
