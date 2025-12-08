@@ -185,7 +185,7 @@ const products = [
         category: "mom",
         price: 499.99,
         description: "Three uninterrupted hours of complete silence. No questions, no requests, no interruptions. Mom deserves this moment of pure tranquility! Premium quality - order now!",
-        image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
+        image: "https://static.vecteezy.com/system/resources/thumbnails/040/723/811/small/ai-generated-solitary-morning-yoga-practice-by-secluded-lake-bathed-in-golden-sunlight-embraced-by-peaceful-nature-free-photo.jpg"
     },
     {
         id: 47,
