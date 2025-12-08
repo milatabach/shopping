@@ -73,14 +73,6 @@ const products = [
         description: "Instant confidence boost. Wear it proudly. Guaranteed to make you feel unstoppable. Effects may vary! Transform your experience - buy today!",
         image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop"
     },
-    {
-        id: 35,
-        name: "Peace of Mind",
-        category: "accessories",
-        price: 899.99,
-        description: "Tranquility in its purest form. Zen-certified and meditation-approved. Free from all worries and anxieties! Premium quality - order now!",
-        image: "https://media.istockphoto.com/id/1564441923/photo/stack-of-stones-in-calm-ocean.jpg?s=612x612&w=0&k=20&c=KoGh7oy5ZaBsfdNEe9phv20VWH800WFEkMcZIwMG3BY="
-    },
 
     // Mom Category Products - Normal to Crazy
     {
