@@ -475,7 +475,7 @@ const products = [
         category: "sibling",
         price: 999.99,
         description: "Equal bedroom sizes and window access. No more arguments about who got the better deal! Best value - act fast!",
-        image: "https://images.unsplash.com/photo-1521622163-27b2c045efd7?w=500&h=600&fit=crop"
+        image: "https://cdn.mos.cms.futurecdn.net/v2/t:0,l:373,cw:2197,ch:1648,q:80,w:2197/XKp7rdEZA5f8xnDagx46S.jpg"
     },
     {
         id: 80,
