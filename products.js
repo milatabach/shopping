@@ -604,6 +604,6 @@ const products = [
         category: "friends",
         price: 9999999.99,
         description: "That rare soul-deep connection where you found your chosen family. Priceless but we had to put a price anyway! Exclusive design - don't miss out!",
-        image: "https://images.unsplash.com/photo-1521712163-1dcabb73ffb9?w=500&h=600&fit=crop"
+        image: "https://cdn.powerofpositivity.com/wp-content/uploads/2016/01/soulmate-relationship.jpg"
     }
 ];
