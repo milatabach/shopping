@@ -386,7 +386,7 @@ const products = [
         category: "dad",
         price: 15900,
         description: "Premium age-reversal treatment. Rollback the years and feel like you're in your twenties again. Results may vary, confidence guaranteed! Exclusive offer - limited stock!",
-        image: "https://images.pexels.com/photos/159711/pexels-photo-159711.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
+        image: "https://img4.dhresource.com/webp/m/260x260/f3/albu/jc/y/28/abc8c40e-f418-4387-b91c-d297ab27beba.jpg"
     },
     {
         id: 69,
