@@ -192,7 +192,7 @@ const products = [
         category: "mom",
         price: 7499.99,
         description: "Pure confidence in a convenient package. Mom will finally believe she's as amazing as everyone knows she is.",
-        image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521702163-ae6968895b74?w=500&h=600&fit=crop"
     },
     {
         id: 53,
@@ -216,7 +216,7 @@ const products = [
         category: "mom",
         price: 49999.99,
         description: "Pure, concentrated joy specifically formulated for moms. Side effects include spontaneous smiling and contentment.",
-        image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521692163-ae6968895b74?w=500&h=600&fit=crop"
     },
     {
         id: 54,
@@ -224,7 +224,7 @@ const products = [
         category: "mom",
         price: 999999.99,
         description: "Mom always said if everyone just listened to their mothers, the world would be a better place. Here's proof.",
-        image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521682163-ae6968895b74?w=500&h=600&fit=crop"
     },
     {
         id: 49,
@@ -240,7 +240,7 @@ const products = [
         category: "mom",
         price: 450000,
         description: "Deluxe grandson subscription with weekly video calls. Includes adorable giggles, first steps updates, and unlimited bragging rights.",
-        image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521762163-ee00e0ddd4e4?w=500&h=600&fit=crop"
     },
     {
         id: 100,
@@ -248,7 +248,7 @@ const products = [
         category: "mom",
         price: 450000,
         description: "Exclusive granddaughter membership featuring tea party invitations, dress-up sessions, and heartwarming 'I love Grandma' moments.",
-        image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521752163-1dcabb73ffb9?w=500&h=600&fit=crop"
     },
     {
         id: 96,
@@ -272,7 +272,7 @@ const products = [
         category: "mom",
         price: 999999999.99,
         description: "Mom figured it out years ago: it's all about love, family, and making sure everyone eats enough vegetables.",
-        image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521672163-ae6968895b74?w=500&h=600&fit=crop"
     },
     // Dad Category Products - Normal to Impossible
     {
@@ -361,7 +361,7 @@ const products = [
         category: "dad",
         price: 4999.99,
         description: "Genuine acknowledgment that dad might actually know what he's talking about. Extremely rare.",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521612163-0a1dd7228f2d?w=500&h=600&fit=crop"
     },
     {
         id: 67,
@@ -385,7 +385,7 @@ const products = [
         category: "dad",
         price: 15900,
         description: "Premium age-reversal treatment. Rollback the years and feel like you're in your twenties again. Results may vary, confidence guaranteed.",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521602163-0a1dd7228f2d?w=500&h=600&fit=crop"
     },
     {
         id: 69,
@@ -393,7 +393,7 @@ const products = [
         category: "dad",
         price: 49999.99,
         description: "Deep satisfaction knowing his children turned out okay despite his questionable parenting decisions.",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521592163-0a1dd7228f2d?w=500&h=600&fit=crop"
     },
     {
         id: 70,
@@ -417,7 +417,7 @@ const products = [
         category: "dad",
         price: 9999999.99,
         description: "One more day with his own father, to say all the things he never got the chance to say.",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521582163-0a1dd7228f2d?w=500&h=600&fit=crop"
     },
     {
         id: 73,
@@ -425,7 +425,7 @@ const products = [
         category: "dad",
         price: 99999999.99,
         description: "The impossible dream of being exactly the dad his kids needed, when they needed it most.",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521572163-0a1dd7228f2d?w=500&h=600&fit=crop"
     },
     // Sibling Category Products - Normal to Impossible
     {
@@ -474,7 +474,7 @@ const products = [
         category: "sibling",
         price: 999.99,
         description: "Equal bedroom sizes and window access. No more arguments about who got the better deal.",
-        image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521622163-27b2c045efd7?w=500&h=600&fit=crop"
     },
     {
         id: 80,
@@ -482,7 +482,7 @@ const products = [
         category: "sibling",
         price: 2499.99,
         description: "Permanent end to the eternal question of who is mom's favorite. Spoiler: it's neither of you.",
-        image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521742163-1dcabb73ffb9?w=500&h=600&fit=crop"
     },
     {
         id: 81,
@@ -498,7 +498,7 @@ const products = [
         category: "sibling",
         price: 9999.99,
         description: "Recognition that you're both amazing in your own ways. No more comparisons or competition.",
-        image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521662163-ae6968895b74?w=500&h=600&fit=crop"
     },
     {
         id: 83,
@@ -506,7 +506,7 @@ const products = [
         category: "sibling",
         price: 49999.99,
         description: "Return to the days when your biggest worry was who got the last cookie, not adult responsibilities.",
-        image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521652163-ae6968895b74?w=500&h=600&fit=crop"
     },
     {
         id: 84,
@@ -514,7 +514,7 @@ const products = [
         category: "sibling",
         price: 99999999.99,
         description: "Unbreakable connection that survives distance, time, and even that incident with your diary.",
-        image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521732163-1dcabb73ffb9?w=500&h=600&fit=crop"
     },
     // Friends Category Products - Normal to Impossible
     {
@@ -539,7 +539,7 @@ const products = [
         category: "friends",
         price: 24.99,
         description: "Classic friendship bracelets that prove you're best friends forever, or at least until next year.",
-        image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521642163-ae6968895b74?w=500&h=600&fit=crop"
     },
     {
         id: 88,
@@ -563,7 +563,7 @@ const products = [
         category: "friends",
         price: 1499.99,
         description: "All your friends are free at the same time. No more 'let me check my calendar' for three weeks.",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521772163-21bda4d32df4?w=500&h=600&fit=crop"
     },
     {
         id: 91,
@@ -579,7 +579,7 @@ const products = [
         category: "friends",
         price: 9999.99,
         description: "Friends who stick by you through thick and thin, bad haircuts, and questionable dating choices.",
-        image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521632163-ae6968895b74?w=500&h=600&fit=crop"
     },
     {
         id: 93,
@@ -587,7 +587,7 @@ const products = [
         category: "friends",
         price: 49999.99,
         description: "Friends who truly get you without explanation. They understand your weird jokes and support your dreams.",
-        image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521722163-1dcabb73ffb9?w=500&h=600&fit=crop"
     },
     {
         id: 94,
@@ -603,6 +603,6 @@ const products = [
         category: "friends",
         price: 9999999.99,
         description: "That rare soul-deep connection where you found your chosen family. Priceless but we had to put a price anyway.",
-        image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1521712163-1dcabb73ffb9?w=500&h=600&fit=crop"
     }
 ];
