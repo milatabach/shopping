@@ -201,7 +201,7 @@ const products = [
         category: "mom",
         price: 7499.99,
         description: "Pure confidence in a convenient package. Mom will finally believe she's as amazing as everyone knows she is! Exclusive offer - limited stock!",
-        image: "https://images.unsplash.com/photo-1521702163-ae6968895b74?w=500&h=600&fit=crop"
+        image: "https://cdn.prod.website-files.com/61258807d2d4f9553cc9d3e6/652705a011eb8d5bee370e87_frame-48108136-6527054637783.webp"
     },
     {
         id: 53,
@@ -209,7 +209,7 @@ const products = [
         category: "mom",
         price: 9999.99,
         description: "Recognition for everything mom does. Includes gratitude for midnight feedings, endless laundry, and emotional support! Premium quality - order now!",
-        image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&h=600&fit=crop"
+        image: "https://www.drcarlamanly.com/wp-content/uploads/2019/03/appreciation-thank-you-945x628.jpg"
     },
     {
         id: 50,
