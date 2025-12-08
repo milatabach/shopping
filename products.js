@@ -224,7 +224,15 @@ const products = [
         category: "mom",
         price: 9999999.99,
         description: "Adorable grandchildren who call regularly. Warning: May result in excessive bragging and wallet full of photos.",
-        image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&h=600&fit=crop"
+        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=600&fit=crop"
+    },
+    {
+        id: 96,
+        name: "More frequent Calls from Children, twice a week for 1 year",
+        category: "mom",
+        price: 2999,
+        description: "More frequent Calls from Children, twice a week for 1 year",
+        image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=500&h=600&fit=crop"
     },
     {
         id: 52,
