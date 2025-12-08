@@ -588,7 +588,7 @@ const products = [
         category: "friends",
         price: 49999.99,
         description: "Friends who truly get you without explanation. They understand your weird jokes and support your dreams! Best value - act fast!",
-        image: "https://images.unsplash.com/photo-1521722163-1dcabb73ffb9?w=500&h=600&fit=crop"
+        image: "https://dy7glz37jgl0b.cloudfront.net/advice/images/dad739e5cc62aff56c77c1cff2736da8-woman-leads-on-another-woman-in-group-setting_l.jpeg"
     },
     {
         id: 94,
