@@ -43,7 +43,7 @@ const products = [
     // Conceptual/Quirky Products
     {
         id: 31,
-        name: "Happiness",
+        name: "1 month of Happiness",
         category: "accessories",
         price: 999.99,
         description: "Pure, bottled happiness. A limited edition item that brings instant joy. One size fits all emotions. No refunds on used happiness.",
@@ -89,6 +89,14 @@ const products = [
         price: 189.99,
         description: "Sophisticated wool jacket perfect for mom. Classic tailoring with modern comfort. She deserves to look amazing.",
         image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=500&h=600&fit=crop"
+    },
+    {
+        id: 97,
+        name: "Cashmere Sweater",
+        category: "mom",
+        price: 189.99,
+        description: "Luxurious 100% cashmere sweater with ribbed trim. Ultra-soft and warm for cold weather styling.",
+        image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500&h=600&fit=crop"
     },
     {
         id: 37,
@@ -204,7 +212,7 @@ const products = [
     },
     {
         id: 51,
-        name: "Happiness",
+        name: "1 month of Happiness",
         category: "mom",
         price: 49999.99,
         description: "Pure, concentrated joy specifically formulated for moms. Side effects include spontaneous smiling and contentment.",
