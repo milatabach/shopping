@@ -98,7 +98,7 @@ function displayProducts(productsToDisplay) {
                 <div class="product-name">${product.name}</div>
                 <div class="product-footer">
                     <div class="product-price">$${product.price.toFixed(2)}</div>
-                    <button class="add-to-cart-btn" onclick="addToCart(${product.id})">Add to Cart</button>
+                    <button class="add-to-cart-btn" onclick="addToCart(${product.id}, event); event.stopPropagation();" type="button">Add to Cart</button>
                 </div>
             </div>
         `;
@@ -107,22 +107,52 @@ function displayProducts(productsToDisplay) {
 }
 
 // Add product to cart
-function addToCart(productId) {
-    const product = products.find(p => p.id === productId);
-    const existingItem = cart.find(item => item.id === productId);
-    
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cart.push({
-            ...product,
-            quantity: 1
-        });
+function addToCart(productId, event) {
+    try {
+        const product = products.find(p => p.id === productId);
+        
+        if (!product) {
+            console.error('Product not found:', productId);
+            showToast('Product not found', 'error');
+            return;
+        }
+        
+        const existingItem = cart.find(item => item.id === productId);
+        
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({
+                ...product,
+                quantity: 1
+            });
+        }
+        
+        updateCart();
+        showCartNotification();
+        playCartSound();
+        showToast(`${product.name} added to cart!`, 'success');
+        
+        // Auto-open cart sidebar
+        const sidebar = document.getElementById('cartSidebar');
+        const overlay = document.getElementById('cartOverlay');
+        if (sidebar && !sidebar.classList.contains('active')) {
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+        }
+        
+        // Add button animation feedback
+        const button = event?.target || document.querySelector(`button[onclick*="addToCart(${productId})"]`);
+        if (button) {
+            button.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                button.style.transform = '';
+            }, 150);
+        }
+    } catch (error) {
+        console.error('Error adding to cart:', error);
+        showToast('Error adding item to cart', 'error');
     }
-    
-    updateCart();
-    showCartNotification();
-    playCartSound();
 }
 
 // Add a custom item that isn't in the product catalog
@@ -162,16 +192,27 @@ function updateCart() {
     const cartCount = document.getElementById('cartCount');
     const cartTotal = document.getElementById('cartTotal');
     
-    // Update cart count
+    // Update cart count with animation
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartCount.textContent = totalItems;
+    if (cartCount) {
+        const oldCount = parseInt(cartCount.textContent) || 0;
+        cartCount.textContent = totalItems;
+        
+        // Pulse animation when count changes
+        if (totalItems > oldCount) {
+            cartCount.classList.add('pulse');
+            setTimeout(() => {
+                cartCount.classList.remove('pulse');
+            }, 500);
+        }
+    }
     
-    // Update cart items
+    // Update cart items with smooth animations
     if (cart.length === 0) {
         cartItems.innerHTML = '<div class="empty-cart">Your cart is empty</div>';
     } else {
-        cartItems.innerHTML = cart.map(item => `
-            <div class="cart-item">
+        cartItems.innerHTML = cart.map((item, index) => `
+            <div class="cart-item" style="animation-delay: ${index * 0.05}s">
                 <img src="${item.image}" alt="${item.name}" class="cart-item-image">
                 <div class="cart-item-details">
                     <div class="cart-item-name">${item.name}</div>
@@ -203,6 +244,7 @@ function updateQuantity(productId, change) {
             updateCart();
             if (change > 0) {
                 playCartSound();
+                showToast('Quantity updated', 'success');
             }
         }
     }
@@ -210,8 +252,12 @@ function updateQuantity(productId, change) {
 
 // Remove from cart
 function removeFromCart(productId) {
-    cart = cart.filter(item => item.id !== productId);
-    updateCart();
+    const item = cart.find(item => item.id === productId);
+    if (item) {
+        cart = cart.filter(item => item.id !== productId);
+        updateCart();
+        showToast(`${item.name} removed from cart`, 'success');
+    }
 }
 
 // Toggle cart sidebar
@@ -225,10 +271,39 @@ function toggleCart() {
 // Show cart notification
 function showCartNotification() {
     const cartIcon = document.querySelector('.cart-icon');
-    cartIcon.style.animation = 'none';
+    if (cartIcon) {
+        cartIcon.style.animation = 'none';
+        setTimeout(() => {
+            cartIcon.style.animation = 'bounce 0.5s ease';
+        }, 10);
+    }
+}
+
+// Show toast notification
+function showToast(message, type = 'success') {
+    // Remove existing toast if any
+    const existingToast = document.querySelector('.toast-notification');
+    if (existingToast) {
+        existingToast.remove();
+    }
+    
+    const toast = document.createElement('div');
+    toast.className = `toast-notification toast-${type}`;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    // Trigger animation
     setTimeout(() => {
-        cartIcon.style.animation = 'bounce 0.5s ease';
+        toast.classList.add('show');
     }, 10);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+            toast.remove();
+        }, 300);
+    }, 3000);
 }
 
 // Filter products
