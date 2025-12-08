@@ -5,7 +5,7 @@ const products = [
         name: "Classic Cotton T-Shirt",
         category: "mens",
         price: 24.99,
-        description: "100% cotton crew neck t-shirt. Soft, breathable fabric perfect for everyday wear. Available in multiple colors.",
+        description: "100% cotton crew neck t-shirt. Soft, breathable fabric perfect for everyday wear. Available in multiple colors! Transform your experience - buy today!",
         image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=600&fit=crop"
     },
     {
@@ -13,7 +13,7 @@ const products = [
         name: "Slim Fit Denim Jeans",
         category: "mens",
         price: 79.99,
-        description: "Premium stretch denim with slim fit. Features five-pocket styling and durable construction for lasting comfort.",
+        description: "Premium stretch denim with slim fit. Features five-pocket styling and durable construction for lasting comfort! Best value - act fast!",
         image: "https://images.unsplash.com/photo-1542272604-787c3835535d?w=500&h=600&fit=crop"
     },
     {
@@ -21,7 +21,7 @@ const products = [
         name: "Leather Crossbody Bag",
         category: "accessories",
         price: 129.99,
-        description: "Genuine leather crossbody bag with adjustable strap. Multiple compartments for organized storage.",
+        description: "Genuine leather crossbody bag with adjustable strap. Multiple compartments for organized storage! Premium quality - order now!",
         image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&h=600&fit=crop"
     },
     {
@@ -29,7 +29,7 @@ const products = [
         name: "Running Sneakers",
         category: "mens",
         price: 94.99,
-        description: "Lightweight athletic shoes with cushioned sole. Breathable mesh upper and responsive cushioning for all-day comfort.",
+        description: "Lightweight athletic shoes with cushioned sole. Breathable mesh upper and responsive cushioning for all-day comfort! Premium quality - order now!",
         image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&h=600&fit=crop"
     },
     {
@@ -37,7 +37,7 @@ const products = [
         name: "Knit Beanie",
         category: "accessories",
         price: 24.99,
-        description: "Soft knit beanie with fold-up cuff. One size fits most, perfect for cold weather.",
+        description: "Soft knit beanie with fold-up cuff. One size fits most, perfect for cold weather! Best value - act fast!",
         image: "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=500&h=600&fit=crop"
     },
     // Conceptual/Quirky Products
@@ -46,7 +46,7 @@ const products = [
         name: "1 month of Happiness",
         category: "accessories",
         price: 999.99,
-        description: "Pure, bottled happiness. A limited edition item that brings instant joy. One size fits all emotions. No refunds on used happiness.",
+        description: "Pure, bottled happiness. A limited edition item that brings instant joy. One size fits all emotions. No refunds on used happiness! Exclusive offer - limited stock!",
         image: "https://images.pexels.com/photos/1070536/pexels-photo-1070536.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
@@ -54,7 +54,7 @@ const products = [
         name: "Time",
         category: "accessories",
         price: 1299.99,
-        description: "Extra time in a convenient package. Add more hours to your day. Warning: May cause temporal paradoxes. Handle with care.",
+        description: "Extra time in a convenient package. Add more hours to your day. Warning: May cause temporal paradoxes. Handle with care! Limited edition - get yours today!",
         image: "https://images.unsplash.com/photo-1501139083538-0139583c060f?w=500&h=600&fit=crop"
     },
     {
@@ -62,7 +62,7 @@ const products = [
         name: "Dreams",
         category: "accessories",
         price: 799.99,
-        description: "Premium quality dreams. Lucid and vivid. Choose your own adventure every night. Batteries not included.",
+        description: "Premium quality dreams. Lucid and vivid. Choose your own adventure every night. Batteries not included! Limited time offer - order now!",
         image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
@@ -70,7 +70,7 @@ const products = [
         name: "Confidence",
         category: "accessories",
         price: 549.99,
-        description: "Instant confidence boost. Wear it proudly. Guaranteed to make you feel unstoppable. Effects may vary.",
+        description: "Instant confidence boost. Wear it proudly. Guaranteed to make you feel unstoppable. Effects may vary! Transform your experience - buy today!",
         image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop"
     },
     {
@@ -78,7 +78,7 @@ const products = [
         name: "Peace of Mind",
         category: "accessories",
         price: 899.99,
-        description: "Tranquility in its purest form. Zen-certified and meditation-approved. Free from all worries and anxieties.",
+        description: "Tranquility in its purest form. Zen-certified and meditation-approved. Free from all worries and anxieties! Premium quality - order now!",
         image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&h=600&fit=crop"
     },
 
@@ -88,7 +88,7 @@ const products = [
         name: "Elegant Wool Jacket",
         category: "mom",
         price: 189.99,
-        description: "Sophisticated wool jacket perfect for mom. Classic tailoring with modern comfort. She deserves to look amazing.",
+        description: "Sophisticated wool jacket perfect for mom. Classic tailoring with modern comfort. She deserves to look amazing! Premium quality - order now!",
         image: "https://m.media-amazon.com/images/I/71EhO0e2KOL._AC_SY879_.jpg"
     },
     {
@@ -96,7 +96,7 @@ const products = [
         name: "Cashmere Sweater",
         category: "mom",
         price: 189.99,
-        description: "Luxurious 100% cashmere sweater with ribbed trim. Ultra-soft and warm for cold weather styling.",
+        description: "Luxurious 100% cashmere sweater with ribbed trim. Ultra-soft and warm for cold weather styling! Transform your life today!",
         image: "https://images.pexels.com/photos/996330/pexels-photo-996330.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
@@ -104,7 +104,7 @@ const products = [
         name: "Comfortable Walking Shoes",
         category: "mom",
         price: 124.99,
-        description: "Supportive walking shoes designed for mom's busy lifestyle. Cushioned insole and arch support for all-day comfort.",
+        description: "Supportive walking shoes designed for mom's busy lifestyle. Cushioned insole and arch support for all-day comfort! Premium quality - order now!",
         image: "https://m.media-amazon.com/images/I/61FABOBX8UL._AC_SY695_.jpg"
     },
     {
@@ -112,7 +112,7 @@ const products = [
         name: "Pearl Necklace",
         category: "mom",
         price: 299.99,
-        description: "Timeless pearl necklace that mom will treasure forever. Genuine freshwater pearls with sterling silver clasp.",
+        description: "Timeless pearl necklace that mom will treasure forever. Genuine freshwater pearls with sterling silver clasp! Transform your experience - buy today!",
         image: "https://m.media-amazon.com/images/I/61wr27PeWpL._AC_SY695_.jpg"
     },
     {
@@ -120,7 +120,7 @@ const products = [
         name: "Luxury Handbag",
         category: "mom",
         price: 349.99,
-        description: "Premium leather handbag with multiple compartments. Perfect size for all of mom's essentials and then some.",
+        description: "Premium leather handbag with multiple compartments. Perfect size for all of mom's essentials and then some! Exclusive design - don't miss out!",
         image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500&h=600&fit=crop"
     },
     {
@@ -128,7 +128,7 @@ const products = [
         name: "Cozy Reading Blanket",
         category: "mom",
         price: 79.99,
-        description: "Super soft throw blanket for mom's reading corner. Machine washable and irresistibly cuddly.",
+        description: "Super soft throw blanket for mom's reading corner. Machine washable and irresistibly cuddly! Limited time offer - order now!",
         image: "https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
@@ -136,7 +136,7 @@ const products = [
         name: "Spa Day Experience",
         category: "mom",
         price: 199.99,
-        description: "Full spa day package for the mom who deserves pampering. Massage, facial, and relaxation included.",
+        description: "Full spa day package for the mom who deserves pampering. Massage, facial, and relaxation included! Limited time offer - order now!",
         image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=500&h=600&fit=crop"
     },
     {
@@ -144,7 +144,7 @@ const products = [
         name: "Gourmet Cooking Class",
         category: "mom",
         price: 149.99,
-        description: "Professional cooking class for mom to learn new culinary skills. Wine pairing included, of course.",
+        description: "Professional cooking class for mom to learn new culinary skills. Wine pairing included, of course! Exclusive offer - limited stock!",
         image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&h=600&fit=crop"
     },
     {
@@ -152,7 +152,7 @@ const products = [
         name: "Custom Photo Album",
         category: "mom",
         price: 89.99,
-        description: "Personalized photo album filled with family memories. Mom will cry happy tears, guaranteed.",
+        description: "Personalized photo album filled with family memories. Mom will cry happy tears, guaranteed! Limited edition - get yours today!",
         image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=500&h=600&fit=crop"
     },
     {
@@ -160,7 +160,7 @@ const products = [
         name: "Weekend Getaway",
         category: "mom",
         price: 599.99,
-        description: "Two-night weekend escape for mom. She needs a break from taking care of everyone else.",
+        description: "Two-night weekend escape for mom. She needs a break from taking care of everyone else! Exclusive design - don't miss out!",
         image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=500&h=600&fit=crop"
     },
     {
@@ -168,7 +168,7 @@ const products = [
         name: "Personal Assistant for a Day",
         category: "mom",
         price: 299.99,
-        description: "Someone else to handle mom's to-do list for once. Grocery shopping, errands, and organization included.",
+        description: "Someone else to handle mom's to-do list for once. Grocery shopping, errands, and organization included! Exclusive design - don't miss out!",
         image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=500&h=600&fit=crop"
     },
     {
@@ -176,7 +176,7 @@ const products = [
         name: "Uninterrupted Sleep",
         category: "mom",
         price: 2499.99,
-        description: "Eight full hours of sleep without anyone asking where anything is. Revolutionary concept for moms everywhere.",
+        description: "Eight full hours of sleep without anyone asking where anything is. Revolutionary concept for moms everywhere! Transform your experience - buy today!",
         image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=500&h=600&fit=crop"
     },
     {
@@ -184,7 +184,7 @@ const products = [
         name: "Children Who Listen",
         category: "mom",
         price: 4999.99,
-        description: "Kids who actually do what mom asks the first time. Includes automatic room cleaning and homework completion.",
+        description: "Kids who actually do what mom asks the first time. Includes automatic room cleaning and homework completion! Transform your life today!",
         image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&h=600&fit=crop"
     },
     {
@@ -192,7 +192,7 @@ const products = [
         name: "Self-Esteem",
         category: "mom",
         price: 7499.99,
-        description: "Pure confidence in a convenient package. Mom will finally believe she's as amazing as everyone knows she is.",
+        description: "Pure confidence in a convenient package. Mom will finally believe she's as amazing as everyone knows she is! Exclusive offer - limited stock!",
         image: "https://images.unsplash.com/photo-1521702163-ae6968895b74?w=500&h=600&fit=crop"
     },
     {
@@ -200,7 +200,7 @@ const products = [
         name: "Appreciation",
         category: "mom",
         price: 9999.99,
-        description: "Recognition for everything mom does. Includes gratitude for midnight feedings, endless laundry, and emotional support.",
+        description: "Recognition for everything mom does. Includes gratitude for midnight feedings, endless laundry, and emotional support! Premium quality - order now!",
         image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&h=600&fit=crop"
     },
     {
@@ -208,7 +208,7 @@ const products = [
         name: "Time Machine",
         category: "mom",
         price: 24999.99,
-        description: "Go back to when mom's biggest worry was which crayon to use. Batteries definitely not included.",
+        description: "Go back to when mom's biggest worry was which crayon to use. Batteries definitely not included! Limited edition - get yours today!",
         image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
@@ -216,7 +216,7 @@ const products = [
         name: "1 month of Happiness",
         category: "mom",
         price: 49999.99,
-        description: "Pure, concentrated joy specifically formulated for moms. Side effects include spontaneous smiling and contentment.",
+        description: "Pure, concentrated joy specifically formulated for moms. Side effects include spontaneous smiling and contentment! Premium quality - order now!",
         image: "https://images.pexels.com/photos/1070536/pexels-photo-1070536.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
@@ -224,7 +224,7 @@ const products = [
         name: "Grandchildren",
         category: "mom",
         price: 9999999.99,
-        description: "Adorable grandchildren who call regularly. Warning: May result in excessive bragging and wallet full of photos.",
+        description: "Adorable grandchildren who call regularly. Warning: May result in excessive bragging and wallet full of photos! Limited time offer - order now!",
         image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=500&h=600&fit=crop"
     },
     {
@@ -232,7 +232,7 @@ const products = [
         name: "Baby Boy Premium Package",
         category: "mom",
         price: 450000,
-        description: "Deluxe grandson subscription with weekly video calls. Includes adorable giggles, first steps updates, and unlimited bragging rights.",
+        description: "Deluxe grandson subscription with weekly video calls. Includes adorable giggles, first steps updates, and unlimited bragging rights! Premium selection - shop now!",
         image: "https://images.pexels.com/photos/159711/pexels-photo-159711.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
@@ -240,7 +240,7 @@ const products = [
         name: "Baby Girl Premium Package",
         category: "mom",
         price: 450000,
-        description: "Exclusive granddaughter membership featuring tea party invitations, dress-up sessions, and heartwarming 'I love Grandma' moments.",
+        description: "Exclusive granddaughter membership featuring tea party invitations, dress-up sessions, and heartwarming 'I love Grandma' moments! Premium quality - order now!",
         image: "https://images.pexels.com/photos/31528390/pexels-photo-31528390.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
@@ -248,7 +248,7 @@ const products = [
         name: "Weekly Call Subscription (Annual Plan)",
         category: "mom",
         price: 2999,
-        description: "Premium connection package: Two guaranteed phone calls per week for one year. Includes thoughtful check-ins and 'how are you doing' conversations.",
+        description: "Premium connection package: Two guaranteed phone calls per week for one year. Includes thoughtful check-ins and 'how are you doing' conversations! Premium quality - order now!",
         image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=500&h=600&fit=crop"
     },
     {
@@ -256,15 +256,15 @@ const products = [
         name: "Love",
         category: "mom",
         price: 99999999.99,
-        description: "Unlimited, unconditional love in its purest form. Mom has been giving this away for free her whole life.",
+        description: "Unlimited, unconditional love in its purest form. Mom has been giving this away for free her whole life! Premium quality - order now!",
         image: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500&h=600&fit=crop"
     },
     {
         id: 55,
-        name: "The Meaning of Life",
+        name: "The Meaning of Life & More Overall Purpose",
         category: "mom",
         price: 999999999.99,
-        description: "Mom figured it out years ago: it's all about love, family, and making sure everyone eats enough vegetables.",
+        description: "Discover your true purpose and unlock unlimited potential! This exclusive package includes profound life insights, enhanced clarity, and a deeper sense of meaning. Transform your existence with this premium life-enhancement solution. Limited time offer - act now!",
         image: "https://images.unsplash.com/photo-1521672163-ae6968895b74?w=500&h=600&fit=crop"
     },
     // Dad Category Products - Normal to Impossible
@@ -273,7 +273,7 @@ const products = [
         name: "Premium Golf Clubs",
         category: "dad",
         price: 799.99,
-        description: "Professional-grade golf clubs that will definitely improve his game. Comes with optimism about lowering his handicap.",
+        description: "Professional-grade golf clubs that will definitely improve his game. Comes with optimism about lowering his handicap! Transform your life today!",
         image: "https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?w=500&h=600&fit=crop"
     },
     {
@@ -281,7 +281,7 @@ const products = [
         name: "Classic Polo Shirts",
         category: "dad",
         price: 149.99,
-        description: "Comfortable polo shirts perfect for weekend barbecues and 'I'm not working today' vibes.",
+        description: "Comfortable polo shirts perfect for weekend barbecues and 'I'm not working today' vibes! Premium quality guaranteed!",
         image: "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=500&h=600&fit=crop"
     },
     {
@@ -289,7 +289,7 @@ const products = [
         name: "Leather Wallet",
         category: "dad",
         price: 89.99,
-        description: "A wallet he'll use for the next 20 years, complete with space for pictures of the family he never shows anyone.",
+        description: "A wallet he'll use for the next 20 years, complete with space for pictures of the family he never shows anyone! Limited edition - get yours today!",
         image: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500&h=600&fit=crop"
     },
     {
@@ -297,7 +297,7 @@ const products = [
         name: "Barbecue Tool Set",
         category: "dad",
         price: 199.99,
-        description: "Professional grilling tools for the man who takes his weekend barbecue responsibilities very seriously.",
+        description: "Professional grilling tools for the man who takes his weekend barbecue responsibilities very seriously! Transform your experience - buy today!",
         image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=500&h=600&fit=crop"
     },
     {
@@ -305,7 +305,7 @@ const products = [
         name: "Vintage Whiskey",
         category: "dad",
         price: 299.99,
-        description: "Smooth whiskey for contemplating life choices and telling stories about 'back in my day.'",
+        description: "Smooth whiskey for contemplating life choices and telling stories about 'back in my day.'! Premium quality guaranteed!",
         image: "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?w=500&h=600&fit=crop"
     },
     {
@@ -313,7 +313,7 @@ const products = [
         name: "Peace and Quiet Package (3 Hours)",
         category: "dad",
         price: 399.99,
-        description: "Three uninterrupted hours in the garage where nobody asks him to fix anything or explain where he put something.",
+        description: "Three uninterrupted hours in the garage where nobody asks him to fix anything or explain where he put something! Transform your life today!",
         image: "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=500&h=600&fit=crop"
     },
     {
@@ -321,7 +321,7 @@ const products = [
         name: "Sports Knowledge",
         category: "dad",
         price: 599.99,
-        description: "Instant expertise on all sports statistics from 1987 to present. Comes with the ability to predict draft picks.",
+        description: "Instant expertise on all sports statistics from 1987 to present. Comes with the ability to predict draft picks! Transform your experience - buy today!",
         image: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=500&h=600&fit=crop"
     },
     {
@@ -329,7 +329,7 @@ const products = [
         name: "Perfect Dad Joke Timing",
         category: "dad",
         price: 999.99,
-        description: "Impeccable comedic timing for maximum eye-rolls and groans. Guaranteed to embarrass teenagers.",
+        description: "Impeccable comedic timing for maximum eye-rolls and groans. Guaranteed to embarrass teenagers! Premium selection - shop now!",
         image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500&h=600&fit=crop"
     },
     {
@@ -337,15 +337,15 @@ const products = [
         name: "Thermostat Control",
         category: "dad",
         price: 1499.99,
-        description: "Absolute authority over the house temperature. Nobody else is allowed to touch it. Ever.",
-        image: "https://images.unsplash.com/photo-1585338107529-13afc5f02586?w=500&h=600&fit=crop"
+        description: "Absolute authority over the house temperature. Nobody else is allowed to touch it. Ever! Best value - act fast!",
+        image: "https://images.pexels.com/photos/163236/pexels-photo-163236.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
         id: 65,
         name: "Tool Recognition",
         category: "dad",
         price: 2499.99,
-        description: "The ability for family members to correctly identify and hand him the right tool the first time.",
+        description: "The ability for family members to correctly identify and hand him the right tool the first time! Premium selection - shop now!",
         image: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=500&h=600&fit=crop"
     },
     {
@@ -353,7 +353,7 @@ const products = [
         name: "Respect from Teenagers",
         category: "dad",
         price: 4999.99,
-        description: "Genuine acknowledgment that dad might actually know what he's talking about. Extremely rare.",
+        description: "Genuine acknowledgment that dad might actually know what he's talking about. Extremely rare! Transform your experience - buy today!",
         image: "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
@@ -361,7 +361,7 @@ const products = [
         name: "Back Pain Relief",
         category: "dad",
         price: 9999.99,
-        description: "Complete elimination of that mysterious back pain that started in his thirties for no apparent reason.",
+        description: "Complete elimination of that mysterious back pain that started in his thirties for no apparent reason! Limited edition - get yours today!",
         image: "https://images.pexels.com/photos/159711/pexels-photo-159711.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
@@ -369,7 +369,7 @@ const products = [
         name: "Hair Restoration",
         category: "dad",
         price: 19999.99,
-        description: "Full head of hair from his twenties, exactly as thick and stylish as he remembers it being.",
+        description: "Full head of hair from his twenties, exactly as thick and stylish as he remembers it being! Transform your experience - buy today!",
         image: "https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?w=500&h=600&fit=crop"
     },
     {
@@ -377,7 +377,7 @@ const products = [
         name: "Eternal Youth Serum (Annual Subscription)",
         category: "dad",
         price: 15900,
-        description: "Premium age-reversal treatment. Rollback the years and feel like you're in your twenties again. Results may vary, confidence guaranteed.",
+        description: "Premium age-reversal treatment. Rollback the years and feel like you're in your twenties again. Results may vary, confidence guaranteed! Exclusive offer - limited stock!",
         image: "https://images.unsplash.com/photo-1521602163-0a1dd7228f2d?w=500&h=600&fit=crop"
     },
     {
@@ -385,7 +385,7 @@ const products = [
         name: "Pride",
         category: "dad",
         price: 49999.99,
-        description: "Deep satisfaction knowing his children turned out okay despite his questionable parenting decisions.",
+        description: "Deep satisfaction knowing his children turned out okay despite his questionable parenting decisions! Transform your experience - buy today!",
         image: "https://images.unsplash.com/photo-1521592163-0a1dd7228f2d?w=500&h=600&fit=crop"
     },
     {
@@ -393,7 +393,7 @@ const products = [
         name: "Legacy",
         category: "dad",
         price: 99999.99,
-        description: "The knowledge that he made a lasting positive impact and his wisdom will live on through generations.",
+        description: "The knowledge that he made a lasting positive impact and his wisdom will live on through generations! Premium quality - order now!",
         image: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=500&h=600&fit=crop"
     },
     {
@@ -401,7 +401,7 @@ const products = [
         name: "Fresh Start",
         category: "dad",
         price: 499999.99,
-        description: "The chance to do it all over again, but this time knowing what he knows now. No regrets, just wisdom.",
+        description: "The chance to do it all over again, but this time knowing what he knows now. No regrets, just wisdom! Limited edition - get yours today!",
         image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=600&fit=crop"
     },
     {
@@ -409,7 +409,7 @@ const products = [
         name: "Time with Dad",
         category: "dad",
         price: 9999999.99,
-        description: "One more day with his own father, to say all the things he never got the chance to say.",
+        description: "One more day with his own father, to say all the things he never got the chance to say! Premium quality guaranteed!",
         image: "https://images.unsplash.com/photo-1521582163-0a1dd7228f2d?w=500&h=600&fit=crop"
     },
     {
@@ -417,7 +417,7 @@ const products = [
         name: "Perfect Father",
         category: "dad",
         price: 99999999.99,
-        description: "The impossible dream of being exactly the dad his kids needed, when they needed it most.",
+        description: "The impossible dream of being exactly the dad his kids needed, when they needed it most! Best value - act fast!",
         image: "https://images.unsplash.com/photo-1521572163-0a1dd7228f2d?w=500&h=600&fit=crop"
     },
     // Sibling Category Products - Normal to Impossible
@@ -426,7 +426,7 @@ const products = [
         name: "Board Game Collection",
         category: "sibling",
         price: 89.99,
-        description: "Classic board games for sibling bonding time. Warning: May cause temporary alliances and inevitable arguments.",
+        description: "Classic board games for sibling bonding time. Warning: May cause temporary alliances and inevitable arguments! Exclusive offer - limited stock!",
         image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=500&h=600&fit=crop"
     },
     {
@@ -434,7 +434,7 @@ const products = [
         name: "Matching Hoodies",
         category: "sibling",
         price: 79.99,
-        description: "Comfortable hoodies that prove you're related even when you pretend not to know each other in public.",
+        description: "Comfortable hoodies that prove you're related even when you pretend not to know each other in public! Premium quality guaranteed!",
         image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&h=600&fit=crop"
     },
     {
@@ -442,7 +442,7 @@ const products = [
         name: "Shared Snack Stash",
         category: "sibling",
         price: 49.99,
-        description: "Secret snacks that are somehow always gone when you want them. Includes accusations and denials.",
+        description: "Secret snacks that are somehow always gone when you want them. Includes accusations and denials! Best value - act fast!",
         image: "https://images.unsplash.com/photo-1559656914-a30970c1affd?w=500&h=600&fit=crop"
     },
     {
@@ -450,7 +450,7 @@ const products = [
         name: "Concert Tickets",
         category: "sibling",
         price: 299.99,
-        description: "Music experience to share together. Creates memories and inside jokes that will last decades.",
+        description: "Music experience to share together. Creates memories and inside jokes that will last decades! Premium quality - order now!",
         image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=500&h=600&fit=crop"
     },
     {
@@ -458,7 +458,7 @@ const products = [
         name: "Sibling Telepathy",
         category: "sibling",
         price: 599.99,
-        description: "Ability to communicate without words. Especially useful for coordinating against parents.",
+        description: "Ability to communicate without words. Especially useful for coordinating against parents! Best value - act fast!",
         image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=500&h=600&fit=crop"
     },
     {
@@ -466,7 +466,7 @@ const products = [
         name: "Fair Room Assignment",
         category: "sibling",
         price: 999.99,
-        description: "Equal bedroom sizes and window access. No more arguments about who got the better deal.",
+        description: "Equal bedroom sizes and window access. No more arguments about who got the better deal! Best value - act fast!",
         image: "https://images.unsplash.com/photo-1521622163-27b2c045efd7?w=500&h=600&fit=crop"
     },
     {
@@ -474,7 +474,7 @@ const products = [
         name: "Sibling Rivalry Resolution",
         category: "sibling",
         price: 2499.99,
-        description: "Permanent end to the eternal question of who is mom's favorite. Spoiler: it's neither of you.",
+        description: "Permanent end to the eternal question of who is mom's favorite. Spoiler: it's neither of you! Limited edition - get yours today!",
         image: "https://images.unsplash.com/photo-1521742163-1dcabb73ffb9?w=500&h=600&fit=crop"
     },
     {
@@ -482,7 +482,7 @@ const products = [
         name: "Borrowed Item Return",
         category: "sibling",
         price: 4999.99,
-        description: "All your stuff that mysteriously disappeared into their room. Finally returned in original condition.",
+        description: "All your stuff that mysteriously disappeared into their room. Finally returned in original condition! Premium selection - shop now!",
         image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=500&h=600&fit=crop"
     },
     {
@@ -490,7 +490,7 @@ const products = [
         name: "Mutual Respect",
         category: "sibling",
         price: 9999.99,
-        description: "Recognition that you're both amazing in your own ways. No more comparisons or competition.",
+        description: "Recognition that you're both amazing in your own ways. No more comparisons or competition! Best value - act fast!",
         image: "https://images.unsplash.com/photo-1521662163-ae6968895b74?w=500&h=600&fit=crop"
     },
     {
@@ -498,7 +498,7 @@ const products = [
         name: "Childhood Innocence",
         category: "sibling",
         price: 49999.99,
-        description: "Return to the days when your biggest worry was who got the last cookie, not adult responsibilities.",
+        description: "Return to the days when your biggest worry was who got the last cookie, not adult responsibilities! Transform your life today!",
         image: "https://images.unsplash.com/photo-1521652163-ae6968895b74?w=500&h=600&fit=crop"
     },
     {
@@ -506,7 +506,7 @@ const products = [
         name: "Perfect Sibling Bond",
         category: "sibling",
         price: 99999999.99,
-        description: "Unbreakable connection that survives distance, time, and even that incident with your diary.",
+        description: "Unbreakable connection that survives distance, time, and even that incident with your diary! Premium selection - shop now!",
         image: "https://images.unsplash.com/photo-1521732163-1dcabb73ffb9?w=500&h=600&fit=crop"
     },
     // Friends Category Products - Normal to Impossible
@@ -515,7 +515,7 @@ const products = [
         name: "Coffee Date Vouchers",
         category: "friends",
         price: 39.99,
-        description: "Ten coffee dates to catch up on life, gossip, and complain about work together.",
+        description: "Ten coffee dates to catch up on life, gossip, and complain about work together! Transform your experience - buy today!",
         image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&h=600&fit=crop"
     },
     {
@@ -523,7 +523,7 @@ const products = [
         name: "Pizza Night Kit",
         category: "friends",
         price: 59.99,
-        description: "Everything needed for the perfect friends' pizza night. Movies and bad decisions included.",
+        description: "Everything needed for the perfect friends' pizza night. Movies and bad decisions included! Premium selection - shop now!",
         image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&h=600&fit=crop"
     },
     {
@@ -531,7 +531,7 @@ const products = [
         name: "Friendship Bracelet Set",
         category: "friends",
         price: 24.99,
-        description: "Classic friendship bracelets that prove you're best friends forever, or at least until next year.",
+        description: "Classic friendship bracelets that prove you're best friends forever, or at least until next year! Premium quality guaranteed!",
         image: "https://images.unsplash.com/photo-1521642163-ae6968895b74?w=500&h=600&fit=crop"
     },
     {
@@ -539,7 +539,7 @@ const products = [
         name: "Road Trip Adventure",
         category: "friends",
         price: 899.99,
-        description: "Epic road trip with your crew. Includes terrible music, inside jokes, and questionable food choices.",
+        description: "Epic road trip with your crew. Includes terrible music, inside jokes, and questionable food choices! Premium quality - order now!",
         image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=500&h=600&fit=crop"
     },
     {
@@ -547,7 +547,7 @@ const products = [
         name: "Group Chat Wisdom",
         category: "friends",
         price: 199.99,
-        description: "The ability to give perfect advice in the group chat instead of just sending memes and confusion.",
+        description: "The ability to give perfect advice in the group chat instead of just sending memes and confusion! Limited time offer - order now!",
         image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=500&h=600&fit=crop"
     },
     {
@@ -555,7 +555,7 @@ const products = [
         name: "Schedule Synchronization",
         category: "friends",
         price: 1499.99,
-        description: "All your friends are free at the same time. No more 'let me check my calendar' for three weeks.",
+        description: "All your friends are free at the same time. No more 'let me check my calendar' for three weeks! Premium quality - order now!",
         image: "https://images.unsplash.com/photo-1521772163-21bda4d32df4?w=500&h=600&fit=crop"
     },
     {
@@ -563,7 +563,7 @@ const products = [
         name: "No Drama Guarantee",
         category: "friends",
         price: 2999.99,
-        description: "Friend group completely free of petty arguments, passive aggression, and 'I'm fine' situations.",
+        description: "Friend group completely free of petty arguments, passive aggression, and 'I'm fine' situations! Transform your experience - buy today!",
         image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=500&h=600&fit=crop"
     },
     {
@@ -571,7 +571,7 @@ const products = [
         name: "Loyal Friendship",
         category: "friends",
         price: 9999.99,
-        description: "Friends who stick by you through thick and thin, bad haircuts, and questionable dating choices.",
+        description: "Friends who stick by you through thick and thin, bad haircuts, and questionable dating choices! Exclusive offer - limited stock!",
         image: "https://images.unsplash.com/photo-1521632163-ae6968895b74?w=500&h=600&fit=crop"
     },
     {
@@ -579,7 +579,7 @@ const products = [
         name: "True Understanding",
         category: "friends",
         price: 49999.99,
-        description: "Friends who truly get you without explanation. They understand your weird jokes and support your dreams.",
+        description: "Friends who truly get you without explanation. They understand your weird jokes and support your dreams! Best value - act fast!",
         image: "https://images.unsplash.com/photo-1521722163-1dcabb73ffb9?w=500&h=600&fit=crop"
     },
     {
@@ -587,7 +587,7 @@ const products = [
         name: "Lifelong Friendship",
         category: "friends",
         price: 99999.99,
-        description: "Friendship that survives distance, time zones, marriage, kids, and all of life's changes.",
+        description: "Friendship that survives distance, time zones, marriage, kids, and all of life's changes! Limited edition - get yours today!",
         image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=600&fit=crop"
     },
     {
@@ -595,7 +595,7 @@ const products = [
         name: "Soul Connection",
         category: "friends",
         price: 9999999.99,
-        description: "That rare soul-deep connection where you found your chosen family. Priceless but we had to put a price anyway.",
+        description: "That rare soul-deep connection where you found your chosen family. Priceless but we had to put a price anyway! Exclusive design - don't miss out!",
         image: "https://images.unsplash.com/photo-1521712163-1dcabb73ffb9?w=500&h=600&fit=crop"
     }
 ];

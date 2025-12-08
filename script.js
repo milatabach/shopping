@@ -115,6 +115,7 @@ function displayProducts(productsToDisplay) {
             <div class="product-info">
                 <div class="product-category">${product.category.replace('mom', 'Mom').replace('dad', 'Dad').replace('sibling', 'Sibling').replace('friends', 'Friends').replace('mens', "Men's").replace('womens', "Women's").replace('accessories', 'Accessories').replace('featured', 'Featured')}</div>
                 <div class="product-name">${product.name}</div>
+                <div class="product-description">${product.description || ''}</div>
                 <div class="product-footer">
                     <div class="product-price">$${product.price.toFixed(2)}</div>
                     <button class="add-to-cart-btn" onclick="addToCart(${product.id}, event); event.stopPropagation();" type="button">Add to Cart</button>
