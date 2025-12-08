@@ -346,7 +346,7 @@ const products = [
         category: "dad",
         price: 1499.99,
         description: "Absolute authority over the house temperature. Nobody else is allowed to touch it. Ever! Best value - act fast!",
-        image: "https://images.pexels.com/photos/163236/pexels-photo-163236.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
+        image: "https://blackhawksupply.com/cdn/shop/articles/Guide_on_Central_Heating_Temperature_Controls_1024x1024.jpg?v=1618496361"
     },
     {
         id: 65,
