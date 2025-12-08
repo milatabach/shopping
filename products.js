@@ -322,7 +322,7 @@ const products = [
         category: "dad",
         price: 399.99,
         description: "Three uninterrupted hours in the garage where nobody asks him to fix anything or explain where he put something! Transform your life today!",
-        image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
+        image: "https://media.istockphoto.com/id/1391812172/photo/relaxed-man-breathing-fresh-air.jpg?s=612x612&w=0&k=20&c=mTdbcJpbUfC7k7EgviY8eXtRio3AloXninT6tZHIQ8k="
     },
     {
         id: 62,
@@ -378,7 +378,7 @@ const products = [
         category: "dad",
         price: 19999.99,
         description: "Full head of hair from his twenties, exactly as thick and stylish as he remembers it being! Transform your experience - buy today!",
-        image: "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
+        image: "https://i.pinimg.com/736x/65/81/dd/6581dd816a6bdfe36748e6be7b82eaaf.jpg"
     },
     {
         id: 98,
