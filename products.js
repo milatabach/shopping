@@ -209,7 +209,7 @@ const products = [
         category: "mom",
         price: 24999.99,
         description: "Go back to when mom's biggest worry was which crayon to use. Batteries definitely not included.",
-        image: "https://images.unsplash.com/photo-1534796636902-2c8a12f42c8a?w=500&h=600&fit=crop"
+        image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=500&h=600&fit=crop"
     },
     {
         id: 51,
