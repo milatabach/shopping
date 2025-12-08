@@ -224,7 +224,7 @@ const products = [
         name: "Grandchildren",
         category: "mom",
         price: 9999999.99,
-        description: "Adorable grandchildren who call regularly. Warning: May result in excessive bragging and wallet full of photos! Limited time offer - order now!",
+        description: "Adorable grandchildren who call regularly. These incredibly cute and friendly little ones will bring endless joy, laughter, and warmth to your life. Warning: May result in excessive bragging and wallet full of photos! Limited time offer - order now!",
         image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=500&h=600&fit=crop"
     },
     {
