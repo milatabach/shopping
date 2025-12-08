@@ -491,7 +491,7 @@ const products = [
         category: "sibling",
         price: 4999.99,
         description: "All your stuff that mysteriously disappeared into their room. Finally returned in original condition! Premium selection - shop now!",
-        image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=500&h=600&fit=crop"
+        image: "https://www.onepartsunshine.com/wp-content/uploads/2010/04/child-wearing-jewelry.jpg"
     },
     {
         id: 82,
